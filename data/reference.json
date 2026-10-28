@@ -1,0 +1,53 @@
+{
+  "_about": "Smaller reference sets: label claims (with the allergens each free-from claim rules out), product categories, consumer profiles and jurisdiction-specific declaration exemptions.",
+  "claims": [
+    {"id": "claim_vegan", "label": "Vegan", "class": "VeganClaim", "excludes": []},
+    {"id": "claim_vegetarian", "label": "Vegetarian", "class": "VegetarianClaim", "excludes": []},
+    {"id": "claim_gluten_free", "label": "Gluten-free", "class": "GlutenFreeClaim", "excludes": ["alg_gluten"],
+     "note": "Gluten-free means below 20 ppm gluten in the US, Canada and EU. It does not mean wheat-free."},
+    {"id": "claim_dairy_free", "label": "Dairy-free", "class": "DairyFreeClaim", "excludes": ["alg_milk"],
+     "note": "No US regulatory definition; consumers read it as milk-free, so milk is treated as excluded."},
+    {"id": "claim_nut_free", "label": "Nut-free", "class": "NutFreeClaim", "excludes": ["alg_tree_nuts", "alg_peanut"]},
+    {"id": "claim_peanut_free", "label": "Peanut-free", "class": "PeanutFreeClaim", "excludes": ["alg_peanut"]},
+    {"id": "claim_egg_free", "label": "Egg-free", "class": "EggFreeClaim", "excludes": ["alg_egg"]},
+    {"id": "claim_soy_free", "label": "Soy-free", "class": "SoyFreeClaim", "excludes": ["alg_soy"]},
+    {"id": "claim_lactose_free", "label": "Lactose-free", "class": "LactoseFreeClaim", "excludes": [],
+     "note": "An intolerance claim about milk sugar. It says nothing about milk protein, so lactose-free milk is still a milk allergen."},
+    {"id": "claim_non_dairy", "label": "Non-dairy (US term)", "class": "NonDairyClaim", "excludes": [],
+     "note": "US regulatory term that permits caseinates, a milk protein (21 CFR 101.4(d)). Not a safety claim."}
+  ],
+  "categories": [
+    {"id": "cat_spreads", "label": "Spreads and dips"},
+    {"id": "cat_plant_drinks", "label": "Plant-based drinks"},
+    {"id": "cat_dairy", "label": "Dairy"},
+    {"id": "cat_dressings", "label": "Dressings"},
+    {"id": "cat_sauces", "label": "Sauces and pastes"},
+    {"id": "cat_condiments", "label": "Condiments"},
+    {"id": "cat_creamers", "label": "Creamers and whiteners"},
+    {"id": "cat_bakery", "label": "Bakery"},
+    {"id": "cat_cereals", "label": "Breakfast cereals"},
+    {"id": "cat_confectionery", "label": "Confectionery"},
+    {"id": "cat_snacks", "label": "Snacks"},
+    {"id": "cat_seasonings", "label": "Seasonings"},
+    {"id": "cat_pasta", "label": "Pasta"},
+    {"id": "cat_ready_meals", "label": "Ready meals"},
+    {"id": "cat_seafood", "label": "Seafood products"},
+    {"id": "cat_cooking", "label": "Cooking ingredients"},
+    {"id": "cat_supplements", "label": "Supplements"}
+  ],
+  "consumers": [
+    {"id": "cons_maya", "label": "Maya (cow's milk allergy)", "classes": ["Consumer"], "must_avoid": ["alg_milk"]},
+    {"id": "cons_liam", "label": "Liam (peanut and tree nut allergy)", "classes": ["Consumer"], "must_avoid": ["alg_peanut", "alg_tree_nuts"]},
+    {"id": "cons_sofia", "label": "Sofia (coeliac disease)", "classes": ["Consumer"], "must_avoid": ["alg_gluten"]},
+    {"id": "cons_wei", "label": "Wei (wheat allergy, not coeliac)", "classes": ["Consumer"], "must_avoid": ["alg_wheat"]},
+    {"id": "cons_noah", "label": "Noah (shellfish allergy)", "classes": ["Consumer"], "must_avoid": ["alg_crustacean", "alg_mollusc"]},
+    {"id": "cons_omar", "label": "Omar (soy and egg allergy)", "classes": ["Consumer"], "must_avoid": ["alg_soy", "alg_egg"]},
+    {"id": "cons_lena", "label": "Lena (sulphite-sensitive asthma)", "classes": ["Consumer"], "must_avoid": ["alg_sulphites"]},
+    {"id": "cons_emma", "label": "Emma (vegetarian, sesame allergy)", "classes": ["VegetarianConsumer"], "must_avoid": ["alg_sesame"]},
+    {"id": "cons_arjun", "label": "Arjun (vegan)", "classes": ["VeganConsumer"], "must_avoid": []}
+  ],
+  "exemptions": [
+    {"id": "ex_eu_wheat_glucose_syrup", "ingredient": "ing_wheat_glucose_syrup", "allergen": "alg_wheat", "jurisdiction": "jur_eu",
+     "basis": "Regulation (EU) No 1169/2011, Annex II, point 1(a): wheat-based glucose syrups including dextrose."}
+  ]
+}

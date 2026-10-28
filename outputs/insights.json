@@ -1,0 +1,114 @@
+{
+  "claims_total": 45,
+  "claim_audit": {
+    "VERIFIED": 30,
+    "CONTRADICTED": 10,
+    "AT RISK": 2,
+    "INFORMATIONAL": 1,
+    "UNVERIFIABLE": 2
+  },
+  "products_with_undeclared_allergen": 10,
+  "undeclared_by_market": {
+    "Canada": 8,
+    "European Union": 5,
+    "United States": 4
+  },
+  "undeclared_pairs": 17,
+  "supplier_checks": 4,
+  "hidden_allergen_findings": 10,
+  "products_with_hidden_allergen": 9,
+  "market_disagreements": 11,
+  "multi_market_products": 40,
+  "naive_screening": {
+    "precision": 0.821,
+    "recall": 0.821,
+    "f1": 0.821,
+    "false_positives": 10,
+    "false_negatives": 10
+  },
+  "naive_closed_world_false_assurances": 23,
+  "confirmed_safe_pairs": 328,
+  "verified_vegan_products": 20,
+  "allergen_prevalence": {
+    "Cereals containing gluten": 12,
+    "Milk": 11,
+    "Gluten (coeliac hazard)": 10,
+    "Egg": 6,
+    "Soybean": 6,
+    "Tree nuts": 5,
+    "Fish": 3,
+    "Mustard": 3,
+    "Crustacean shellfish": 3,
+    "Peanut": 3,
+    "Celery": 2,
+    "Sulphur dioxide and sulphites": 2,
+    "Sesame": 2,
+    "Lupin": 1,
+    "Molluscs": 1
+  },
+  "consumer_outcomes": {
+    "Maya (cow's milk allergy)": {
+      "unsafe": 11,
+      "caution": 1,
+      "uncertain": 0,
+      "confirmed safe": 31,
+      "unsuitable for diet": 0
+    },
+    "Liam (peanut and tree nut allergy)": {
+      "unsafe": 7,
+      "caution": 2,
+      "uncertain": 0,
+      "confirmed safe": 34,
+      "unsuitable for diet": 0
+    },
+    "Sofia (coeliac disease)": {
+      "unsafe": 10,
+      "caution": 0,
+      "uncertain": 0,
+      "confirmed safe": 33,
+      "unsuitable for diet": 0
+    },
+    "Wei (wheat allergy, not coeliac)": {
+      "unsafe": 8,
+      "caution": 0,
+      "uncertain": 0,
+      "confirmed safe": 35,
+      "unsuitable for diet": 0
+    },
+    "Noah (shellfish allergy)": {
+      "unsafe": 3,
+      "caution": 0,
+      "uncertain": 0,
+      "confirmed safe": 40,
+      "unsuitable for diet": 0
+    },
+    "Omar (soy and egg allergy)": {
+      "unsafe": 12,
+      "caution": 0,
+      "uncertain": 1,
+      "confirmed safe": 30,
+      "unsuitable for diet": 0
+    },
+    "Lena (sulphite-sensitive asthma)": {
+      "unsafe": 2,
+      "caution": 0,
+      "uncertain": 0,
+      "confirmed safe": 41,
+      "unsuitable for diet": 0
+    },
+    "Emma (vegetarian, sesame allergy)": {
+      "unsafe": 2,
+      "caution": 0,
+      "uncertain": 0,
+      "confirmed safe": 41,
+      "unsuitable for diet": 10
+    },
+    "Arjun (vegan)": {
+      "unsafe": 0,
+      "caution": 0,
+      "uncertain": 0,
+      "confirmed safe": 43,
+      "unsuitable for diet": 21
+    }
+  }
+}

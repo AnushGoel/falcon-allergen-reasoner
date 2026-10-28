@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments (created by setup_windows.ps1)
+.venv/
+venv/
+env/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large, regenerable run outputs (recreate with: python run_all.py).
+# The readable traces, CQ answers, summaries and .owl files ARE committed.
+outputs/forward_trace.json
+outputs/inferred_facts_*.csv
+
+# Owlready2 quadstore files, if a persistent world is ever used
+*.sqlite3
+
+# Later stages (pykg2vec training data, Streamlit secrets)
+intermediate/
+dataset/
+.streamlit/secrets.toml
+
+# Report sources that are rebuilt from outputs (the PDF in docs/ is committed)
+docs/*.docx
+report/node_modules/

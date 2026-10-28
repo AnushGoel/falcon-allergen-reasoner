@@ -1,0 +1,143 @@
+{
+  "engine": [
+    {
+      "factor": 1,
+      "products": 45,
+      "base_facts": 1174,
+      "derived_facts": 2893,
+      "seconds_min": 0.1585,
+      "seconds_median": 0.1586,
+      "backward_ms_per_query": 2.477
+    },
+    {
+      "factor": 2,
+      "products": 90,
+      "base_facts": 1782,
+      "derived_facts": 4849,
+      "seconds_min": 0.2769,
+      "seconds_median": 0.3287,
+      "backward_ms_per_query": 1.726
+    },
+    {
+      "factor": 4,
+      "products": 180,
+      "base_facts": 2999,
+      "derived_facts": 8625,
+      "seconds_min": 0.5271,
+      "seconds_median": 0.5795,
+      "backward_ms_per_query": 1.556
+    },
+    {
+      "factor": 8,
+      "products": 360,
+      "base_facts": 5430,
+      "derived_facts": 16129,
+      "seconds_min": 1.1325,
+      "seconds_median": 1.1403,
+      "backward_ms_per_query": 2.237
+    },
+    {
+      "factor": 16,
+      "products": 720,
+      "base_facts": 10286,
+      "derived_facts": 30994,
+      "seconds_min": 2.2501,
+      "seconds_median": 2.3227,
+      "backward_ms_per_query": 2.034
+    },
+    {
+      "factor": 32,
+      "products": 1440,
+      "base_facts": 20014,
+      "derived_facts": 61638,
+      "seconds_min": 4.5955,
+      "seconds_median": 4.6221,
+      "backward_ms_per_query": 1.889
+    },
+    {
+      "factor": 64,
+      "products": 2880,
+      "base_facts": 39463,
+      "derived_facts": 121293,
+      "seconds_min": 8.3145,
+      "seconds_median": 8.4812,
+      "backward_ms_per_query": 1.748
+    }
+  ],
+  "engine_slope": 0.976,
+  "owl": [
+    {
+      "factor": 1,
+      "products": 45,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.053,
+      "reasoning_seconds": 5.817,
+      "message": ""
+    },
+    {
+      "factor": 1,
+      "products": 45,
+      "reasoner": "pellet",
+      "status": "error",
+      "build_seconds": 0.055,
+      "reasoning_seconds": 0.549,
+      "message": "OwlReadyJavaError: Java error message is:\nException in thread \"main\" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 65.0\n\tat java.base/java.lang.ClassLoader.defineClass1(Native Method)\n\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)\n\tat java.base/java.security.SecureClassLoader.defineClass(SecureClas"
+    },
+    {
+      "factor": 2,
+      "products": 90,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.059,
+      "reasoning_seconds": 20.856,
+      "message": ""
+    },
+    {
+      "factor": 2,
+      "products": 90,
+      "reasoner": "pellet",
+      "status": "error",
+      "build_seconds": 0.064,
+      "reasoning_seconds": 0.564,
+      "message": "OwlReadyJavaError: Java error message is:\nException in thread \"main\" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 65.0\n\tat java.base/java.lang.ClassLoader.defineClass1(Native Method)\n\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)\n\tat java.base/java.security.SecureClassLoader.defineClass(SecureClas"
+    },
+    {
+      "factor": 4,
+      "products": 180,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.078,
+      "reasoning_seconds": 103.161,
+      "message": ""
+    },
+    {
+      "factor": 4,
+      "products": 180,
+      "reasoner": "pellet",
+      "status": "error",
+      "build_seconds": 0.078,
+      "reasoning_seconds": 0.559,
+      "message": "OwlReadyJavaError: Java error message is:\nException in thread \"main\" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 65.0\n\tat java.base/java.lang.ClassLoader.defineClass1(Native Method)\n\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)\n\tat java.base/java.security.SecureClassLoader.defineClass(SecureClas"
+    },
+    {
+      "factor": 8,
+      "products": 360,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.109,
+      "reasoning_seconds": 789.126,
+      "message": ""
+    },
+    {
+      "factor": 8,
+      "products": 360,
+      "reasoner": "pellet",
+      "status": "error",
+      "build_seconds": 0.113,
+      "reasoning_seconds": 0.579,
+      "message": "OwlReadyJavaError: Java error message is:\nException in thread \"main\" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 65.0\n\tat java.base/java.lang.ClassLoader.defineClass1(Native Method)\n\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)\n\tat java.base/java.security.SecureClassLoader.defineClass(SecureClas"
+    }
+  ],
+  "hermit_slope": 2.356
+}

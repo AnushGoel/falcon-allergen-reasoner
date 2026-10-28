@@ -1,0 +1,53 @@
+# Runs on every push: unit tests, a Pellet+SWRL smoke test, then the full
+# pipeline (rule engine + Pellet + HermiT). The outputs folder is uploaded as
+# a downloadable artifact called "falcon-outputs".
+name: FALCON pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-and-reason:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+
+      - name: Set up Java 25 (the Pellet bundled with owlready2 0.51+ needs it)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Unit and behavioural tests
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Environment check (Pellet + SWRL smoke test)
+        run: python check_environment.py
+
+      - name: Full pipeline (rule engine + Pellet + HermiT)
+        run: python run_all.py
+
+      - name: Scalability benchmark (engine to 2,880 products; OWL reasoners to 180, 150 s cap per run)
+        run: python -m falcon.benchmark --owl --max-factor 64 --owl-max-factor 4 --owl-timeout 150
+
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: falcon-outputs
+          path: outputs/
+          retention-days: 30

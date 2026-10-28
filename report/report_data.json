@@ -1,0 +1,735 @@
+{
+  "kb": {
+    "products": 45,
+    "ingredients": 149,
+    "allergens": 28,
+    "jurisdictions": 3,
+    "label_claims": 10,
+    "categories": 17,
+    "consumers": 9,
+    "exemptions": 1,
+    "compound_ingredients": 6,
+    "products_with_claims": 35,
+    "incomplete_records": 2
+  },
+  "allergen_categories": 15,
+  "allergen_specific": 13,
+  "classes_named": 62,
+  "classes_defined": 30,
+  "object_properties": 29,
+  "data_properties": 4,
+  "annotation_properties": 4,
+  "transitive": 4,
+  "subproperties": 4,
+  "chains": 4,
+  "gcis": 3,
+  "restrictions": 8,
+  "disjoint": 6,
+  "individuals": 262,
+  "swrl": 17,
+  "swrl_no_builtins": 13,
+  "engine_rules": 39,
+  "integrity_rules": 10,
+  "tbox_rules": 205,
+  "rules_total": 271,
+  "engine": {
+    "base_facts": 1174,
+    "total_facts": 4067,
+    "derived_facts": 2893,
+    "rules": 271,
+    "rules_that_fired": 155,
+    "strata": 8,
+    "iterations_per_stratum": {
+      "0": 6,
+      "1": 3,
+      "2": 3,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 2
+    },
+    "derived_by_rule_source": {
+      "tbox": 1343,
+      "tbox-typing": 10,
+      "swrl": 312,
+      "engine": 1138,
+      "integrity": 90
+    },
+    "elapsed_s": 0.1265
+  },
+  "tests": 31,
+  "n_cq": 14,
+  "insights": {
+    "claims_total": 45,
+    "claim_audit": {
+      "VERIFIED": 30,
+      "CONTRADICTED": 10,
+      "AT RISK": 2,
+      "INFORMATIONAL": 1,
+      "UNVERIFIABLE": 2
+    },
+    "products_with_undeclared_allergen": 10,
+    "undeclared_by_market": {
+      "Canada": 8,
+      "European Union": 5,
+      "United States": 4
+    },
+    "undeclared_pairs": 17,
+    "supplier_checks": 4,
+    "hidden_allergen_findings": 10,
+    "products_with_hidden_allergen": 9,
+    "market_disagreements": 11,
+    "multi_market_products": 40,
+    "naive_screening": {
+      "precision": 0.821,
+      "recall": 0.821,
+      "f1": 0.821,
+      "false_positives": 10,
+      "false_negatives": 10
+    },
+    "naive_closed_world_false_assurances": 23,
+    "confirmed_safe_pairs": 328,
+    "verified_vegan_products": 20,
+    "allergen_prevalence": {
+      "Cereals containing gluten": 12,
+      "Milk": 11,
+      "Gluten (coeliac hazard)": 10,
+      "Egg": 6,
+      "Soybean": 6,
+      "Tree nuts": 5,
+      "Fish": 3,
+      "Mustard": 3,
+      "Crustacean shellfish": 3,
+      "Peanut": 3,
+      "Celery": 2,
+      "Sulphur dioxide and sulphites": 2,
+      "Sesame": 2,
+      "Lupin": 1,
+      "Molluscs": 1
+    },
+    "consumer_outcomes": {
+      "Maya (cow's milk allergy)": {
+        "unsafe": 11,
+        "caution": 1,
+        "uncertain": 0,
+        "confirmed safe": 31,
+        "unsuitable for diet": 0
+      },
+      "Liam (peanut and tree nut allergy)": {
+        "unsafe": 7,
+        "caution": 2,
+        "uncertain": 0,
+        "confirmed safe": 34,
+        "unsuitable for diet": 0
+      },
+      "Sofia (coeliac disease)": {
+        "unsafe": 10,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 33,
+        "unsuitable for diet": 0
+      },
+      "Wei (wheat allergy, not coeliac)": {
+        "unsafe": 8,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 35,
+        "unsuitable for diet": 0
+      },
+      "Noah (shellfish allergy)": {
+        "unsafe": 3,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 40,
+        "unsuitable for diet": 0
+      },
+      "Omar (soy and egg allergy)": {
+        "unsafe": 12,
+        "caution": 0,
+        "uncertain": 1,
+        "confirmed safe": 30,
+        "unsuitable for diet": 0
+      },
+      "Lena (sulphite-sensitive asthma)": {
+        "unsafe": 2,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 41,
+        "unsuitable for diet": 0
+      },
+      "Emma (vegetarian, sesame allergy)": {
+        "unsafe": 2,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 41,
+        "unsuitable for diet": 10
+      },
+      "Arjun (vegan)": {
+        "unsafe": 0,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 43,
+        "unsuitable for diet": 21
+      }
+    }
+  },
+  "ec1": {
+    "naive_safe": 347,
+    "lcwa_safe": 328,
+    "naive_vegan": 24,
+    "lcwa_vegan": 20,
+    "false_safe": 19,
+    "false_vegan": 4
+  },
+  "ec4_unsafe": 55,
+  "ec8": {
+    "precision": 0.821,
+    "recall": 0.821,
+    "f1": 0.821,
+    "true_positives": 46,
+    "false_positives": 10,
+    "false_negatives": 10
+  },
+  "showcase": 8,
+  "backward_ms": 3.38,
+  "cq_table": [
+    {
+      "id": "CQ01",
+      "question": "Which ingredients are made from milk, directly or indirectly?",
+      "kind": "lookup + transitive reasoning",
+      "answer": "9 ingredients asserted as made directly from milk; reasoning finds 14 in total."
+    },
+    {
+      "id": "CQ02",
+      "question": "Which allergens does Smoky Steakhouse Sauce contain, and through which ingredient?",
+      "kind": "complex reasoning + proof",
+      "answer": "Fish via Worcestershire sauce (hidden)"
+    },
+    {
+      "id": "CQ03",
+      "question": "Which products contradict their own label claims, and why?",
+      "kind": "rule-based inference",
+      "answer": "10 of 45 claims are contradicted by the products' own composition."
+    },
+    {
+      "id": "CQ04",
+      "question": "Which free-from claims are undermined by a 'may contain' warning?",
+      "kind": "rule-based inference",
+      "answer": "Dark Chocolate 70%: Dairy-free claim vs. 'may contain milk'; Nut-Free Granola Bar: Nut-free claim vs. 'may contain tree nuts'"
+    },
+    {
+      "id": "CQ05",
+      "question": "Which products are unsafe, or need caution, for Liam (peanut and tree nut allergy)?",
+      "kind": "personalised reasoning",
+      "answer": "7 unsafe, 2 caution, 0 uncertain"
+    },
+    {
+      "id": "CQ06",
+      "question": "Which products can be confirmed safe for Liam, and why are others excluded?",
+      "kind": "negation as failure",
+      "answer": "34 products confirmed safe; Dark Chocolate 70% blocked by its hazelnut warning"
+    },
+    {
+      "id": "CQ07",
+      "question": "How is each product classified automatically?",
+      "kind": "classification",
+      "answer": "45 of 45 products placed in at least one defined class"
+    },
+    {
+      "id": "CQ08",
+      "question": "Which allergens must each product declare in the US, Canada and the EU, and where do the markets disagree?",
+      "kind": "jurisdiction-aware reasoning",
+      "answer": "11 product-allergen pairs are treated differently by markets the product is sold in."
+    },
+    {
+      "id": "CQ09",
+      "question": "Which products contain an allergen that the ingredient names do not reveal?",
+      "kind": "hidden-allergen reasoning",
+      "answer": "10 hidden allergens in 9 products (e.g., caseinate, tahini, surimi)"
+    },
+    {
+      "id": "CQ10",
+      "question": "Which products cannot be assessed because their ingredient information is incomplete?",
+      "kind": "incomplete information",
+      "answer": "2 incomplete records; neither can be confirmed safe for any consumer"
+    },
+    {
+      "id": "CQ11",
+      "question": "Which gluten-free products meet the 20 ppm limit, which exceed it, and which rely on the recipe alone?",
+      "kind": "numeric reasoning",
+      "answer": "10 claims: 8 verified, 2 contradicted"
+    },
+    {
+      "id": "CQ12",
+      "question": "How is a new, previously unseen product classified?",
+      "kind": "classification of a new instance",
+      "answer": "NonVeganProduct; vegan claim contradicted; wheat undeclared ((Canada), (European Union))"
+    },
+    {
+      "id": "CQ13",
+      "question": "Which products have allergens that a market requires but the label does not declare?",
+      "kind": "compliance (recall risk)",
+      "answer": "10 products carry at least one undeclared allergen in a market where they are sold."
+    },
+    {
+      "id": "CQ14",
+      "question": "Which label claims are verified, contradicted, at risk or unverifiable?",
+      "kind": "three-valued claim audit",
+      "answer": "30 verified, 10 contradicted, 2 at risk, 2 unverifiable, 1 informational"
+    }
+  ],
+  "rule_table": [
+    {
+      "id": "R01",
+      "name": "Product allergen detection",
+      "fol": "∀a, i, p: Product(p) ∧ hasIngredient(p, i) ∧ triggersAllergen(i, a) → containsAllergen(p, a)"
+    },
+    {
+      "id": "R02",
+      "name": "Free-from claim contradiction",
+      "fol": "∀a, c, p: hasLabelClaim(p, c) ∧ excludesAllergen(c, a) ∧ containsAllergen(p, a) → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R03",
+      "name": "Vegan claim contradiction",
+      "fol": "∀c, p: hasLabelClaim(p, c) ∧ VeganClaim(c) ∧ NonVeganProduct(p) → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R07",
+      "name": "Unsafe for consumer",
+      "fol": "∀a, p, u: Consumer(u) ∧ mustAvoid(u, a) ∧ containsAllergen(p, a) → unsafeFor(p, u)"
+    },
+    {
+      "id": "R13",
+      "name": "EU declaration duty",
+      "fol": "∀a, j, p: containsAllergen(p, a) ∧ soldIn(p, j) ∧ EUJurisdiction(j) ∧ requiresDeclarationOf(j, a) → mustDeclareInEU(p, a)"
+    },
+    {
+      "id": "R14",
+      "name": "Gluten-free threshold exceeded",
+      "fol": "∀c, p, x: hasLabelClaim(p, c) ∧ GlutenFreeClaim(c) ∧ hasGlutenPPM(p, x) ∧ x ≥ 20.0 → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R17",
+      "name": "Sulphites above 10 mg/kg",
+      "fol": "∀p, x: Product(p) ∧ hasSulphiteMgPerKg(p, x) ∧ x > 10.0 → SulphiteAbove10ppm(p)"
+    },
+    {
+      "id": "E04",
+      "name": "Declaration duty unless exempt",
+      "fol": "∀a, i, j, p: containsVia(p, a, i) ∧ soldIn(p, j) ∧ requiresDeclarationOf(j, a) ∧ not exemptFromDeclaration(i, a, j) → declarationDuty(p, a, j)"
+    },
+    {
+      "id": "E08",
+      "name": "Undeclared allergen",
+      "fol": "∀a, j, p: declarationDuty(p, a, j) ∧ not declaresAllergen(p, a) → undeclaredAllergen(p, a, j)"
+    },
+    {
+      "id": "E10",
+      "name": "Hidden allergen",
+      "fol": "∀a, i, p: Product(p) ∧ hasIngredient(p, i) ∧ triggersAllergen(i, a) ∧ not assertedTrigger(i, a) ∧ not mentionsAllergen(i, a) → hiddenAllergenVia(p, a, i)"
+    },
+    {
+      "id": "E13",
+      "name": "Confirmed safe for consumer",
+      "fol": "∀p, u: Consumer(u) ∧ Product(p) ∧ hasIngredientListStatus(p, complete) ∧ hasSomeIngredient(p) ∧ not unsafeFor(p, u) ∧ not cautionFor(p, u) ∧ not uncertainFor(p, u) → confirmedSafeFor(p, u)"
+    },
+    {
+      "id": "E21",
+      "name": "Verified vegan product",
+      "fol": "∀p: Product(p) ∧ hasIngredientListStatus(p, complete) ∧ hasSomeIngredient(p) ∧ not hasNonVeganSafeIngredient(p) → VerifiedVeganProduct(p)"
+    }
+  ],
+  "swrl_table": [
+    {
+      "id": "R01",
+      "name": "Product allergen detection",
+      "fol": "∀a, i, p: Product(p) ∧ hasIngredient(p, i) ∧ triggersAllergen(i, a) → containsAllergen(p, a)"
+    },
+    {
+      "id": "R02",
+      "name": "Free-from claim contradiction",
+      "fol": "∀a, c, p: hasLabelClaim(p, c) ∧ excludesAllergen(c, a) ∧ containsAllergen(p, a) → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R03",
+      "name": "Vegan claim contradiction",
+      "fol": "∀c, p: hasLabelClaim(p, c) ∧ VeganClaim(c) ∧ NonVeganProduct(p) → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R04",
+      "name": "Vegetarian claim contradiction",
+      "fol": "∀c, p: hasLabelClaim(p, c) ∧ VegetarianClaim(c) ∧ NonVegetarianProduct(p) → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R05",
+      "name": "Lactose-free claim contradiction",
+      "fol": "∀c, i, p: hasLabelClaim(p, c) ∧ LactoseFreeClaim(c) ∧ hasIngredient(p, i) ∧ LactoseSourceIngredient(i) → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R06",
+      "name": "Precautionary label conflict",
+      "fol": "∀a, c, p: hasLabelClaim(p, c) ∧ excludesAllergen(c, a) ∧ mayContain(p, a) → precautionaryConflictWith(p, c)"
+    },
+    {
+      "id": "R07",
+      "name": "Unsafe for consumer",
+      "fol": "∀a, p, u: Consumer(u) ∧ mustAvoid(u, a) ∧ containsAllergen(p, a) → unsafeFor(p, u)"
+    },
+    {
+      "id": "R08",
+      "name": "Caution for consumer",
+      "fol": "∀a, p, u: Consumer(u) ∧ mustAvoid(u, a) ∧ mayContain(p, a) → cautionFor(p, u)"
+    },
+    {
+      "id": "R09",
+      "name": "Unsuitable for vegan diet",
+      "fol": "∀p, u: VeganConsumer(u) ∧ NonVeganProduct(p) → unsuitableForDietOf(p, u)"
+    },
+    {
+      "id": "R10",
+      "name": "Unsuitable for vegetarian diet",
+      "fol": "∀p, u: VegetarianConsumer(u) ∧ NonVegetarianProduct(p) → unsuitableForDietOf(p, u)"
+    },
+    {
+      "id": "R11",
+      "name": "US declaration duty",
+      "fol": "∀a, j, p: containsAllergen(p, a) ∧ soldIn(p, j) ∧ USJurisdiction(j) ∧ requiresDeclarationOf(j, a) → mustDeclareInUS(p, a)"
+    },
+    {
+      "id": "R12",
+      "name": "Canada declaration duty",
+      "fol": "∀a, j, p: containsAllergen(p, a) ∧ soldIn(p, j) ∧ CanadaJurisdiction(j) ∧ requiresDeclarationOf(j, a) → mustDeclareInCanada(p, a)"
+    },
+    {
+      "id": "R13",
+      "name": "EU declaration duty",
+      "fol": "∀a, j, p: containsAllergen(p, a) ∧ soldIn(p, j) ∧ EUJurisdiction(j) ∧ requiresDeclarationOf(j, a) → mustDeclareInEU(p, a)"
+    },
+    {
+      "id": "R14",
+      "name": "Gluten-free threshold exceeded",
+      "fol": "∀c, p, x: hasLabelClaim(p, c) ∧ GlutenFreeClaim(c) ∧ hasGlutenPPM(p, x) ∧ x ≥ 20.0 → contradictsClaim(p, c)"
+    },
+    {
+      "id": "R15",
+      "name": "Gluten-free threshold met",
+      "fol": "∀p, x: Product(p) ∧ hasGlutenPPM(p, x) ∧ x < 20.0 → MeetsGlutenFreeThreshold(p)"
+    },
+    {
+      "id": "R16",
+      "name": "Sulphites at or above 10 ppm",
+      "fol": "∀p, x: Product(p) ∧ hasSulphiteMgPerKg(p, x) ∧ x ≥ 10.0 → SulphiteAtOrAbove10ppm(p)"
+    },
+    {
+      "id": "R17",
+      "name": "Sulphites above 10 mg/kg",
+      "fol": "∀p, x: Product(p) ∧ hasSulphiteMgPerKg(p, x) ∧ x > 10.0 → SulphiteAbove10ppm(p)"
+    }
+  ],
+  "bench": {
+    "engine": [
+      {
+        "factor": 1,
+        "products": 45,
+        "base_facts": 1174,
+        "derived_facts": 2893,
+        "seconds_min": 0.1554,
+        "seconds_median": 0.2071,
+        "backward_ms_per_query": 3.736
+      },
+      {
+        "factor": 2,
+        "products": 90,
+        "base_facts": 1782,
+        "derived_facts": 4849,
+        "seconds_min": 0.2697,
+        "seconds_median": 0.2706,
+        "backward_ms_per_query": 2.226
+      },
+      {
+        "factor": 4,
+        "products": 180,
+        "base_facts": 2999,
+        "derived_facts": 8625,
+        "seconds_min": 0.5054,
+        "seconds_median": 0.5554,
+        "backward_ms_per_query": 2.17
+      },
+      {
+        "factor": 8,
+        "products": 360,
+        "base_facts": 5430,
+        "derived_facts": 16129,
+        "seconds_min": 1.1048,
+        "seconds_median": 1.1237,
+        "backward_ms_per_query": 3.001
+      },
+      {
+        "factor": 16,
+        "products": 720,
+        "base_facts": 10286,
+        "derived_facts": 30994,
+        "seconds_min": 2.106,
+        "seconds_median": 2.2205,
+        "backward_ms_per_query": 2.95
+      },
+      {
+        "factor": 32,
+        "products": 1440,
+        "base_facts": 20014,
+        "derived_facts": 61638,
+        "seconds_min": 4.4906,
+        "seconds_median": 4.5403,
+        "backward_ms_per_query": 2.528
+      },
+      {
+        "factor": 64,
+        "products": 2880,
+        "base_facts": 39463,
+        "derived_facts": 121293,
+        "seconds_min": 8.1715,
+        "seconds_median": 8.3693,
+        "backward_ms_per_query": 2.726
+      }
+    ],
+    "engine_slope": 0.976,
+    "owl": [
+      {
+        "factor": 1,
+        "products": 45,
+        "reasoner": "hermit",
+        "status": "consistent",
+        "build_seconds": 0.059,
+        "reasoning_seconds": 6.112,
+        "message": ""
+      },
+      {
+        "factor": 2,
+        "products": 90,
+        "reasoner": "hermit",
+        "status": "consistent",
+        "build_seconds": 0.064,
+        "reasoning_seconds": 20.096,
+        "message": ""
+      },
+      {
+        "factor": 4,
+        "products": 180,
+        "reasoner": "hermit",
+        "status": "consistent",
+        "build_seconds": 0.085,
+        "reasoning_seconds": 90.58,
+        "message": ""
+      },
+      {
+        "factor": 1,
+        "products": 45,
+        "reasoner": "pellet",
+        "build_seconds": null,
+        "reasoning_seconds": null,
+        "status": "timeout",
+        "message": "no result within 150 s"
+      }
+    ],
+    "hermit_slope": 1.945
+  },
+  "owl": {
+    "status": "ok",
+    "pellet": {
+      "reasoner": "pellet",
+      "status": "consistent",
+      "seconds": 2074.961,
+      "message": "",
+      "unsatisfiable_classes": []
+    },
+    "hermit": {
+      "reasoner": "hermit",
+      "status": "consistent",
+      "seconds": 5.798,
+      "message": "",
+      "unsatisfiable_classes": []
+    },
+    "facts_inferred": 888,
+    "triples": 3233,
+    "materializer": "pellet",
+    "crossval_predicates": 47,
+    "crossval_agree": 888,
+    "crossval_total": 888,
+    "ec2": {
+      "title": "Closure axioms make vegan classification possible",
+      "reasoner_used": "pellet",
+      "open": {
+        "reasoner": {
+          "reasoner": "pellet",
+          "status": "consistent",
+          "seconds": 1481.95,
+          "message": "",
+          "unsatisfiable_classes": []
+        },
+        "VeganCompatibleProduct": []
+      },
+      "closed": {
+        "reasoner": {
+          "reasoner": "pellet",
+          "status": "consistent",
+          "seconds": 1571.947,
+          "message": "",
+          "unsatisfiable_classes": []
+        },
+        "VeganCompatibleProduct": [
+          "prod_baking_powder",
+          "prod_celery_salt",
+          "prod_coconut_drink",
+          "prod_cooking_spray",
+          "prod_crispy_malt_flakes",
+          "prod_dark_chocolate",
+          "prod_dijon_mustard",
+          "prod_dried_apricots",
+          "prod_gf_bread_codex",
+          "prod_gf_sesame_crackers",
+          "prod_lupin_pasta",
+          "prod_nut_free_granola_bar",
+          "prod_oat_barista_drink",
+          "prod_peanut_butter",
+          "prod_rye_sourdough",
+          "prod_sesame_hummus",
+          "prod_soy_sauce",
+          "prod_tamari",
+          "prod_trail_mix",
+          "prod_wheat_glucose_candy"
+        ]
+      },
+      "engine_VerifiedVeganProduct": [
+        "prod_baking_powder",
+        "prod_celery_salt",
+        "prod_coconut_drink",
+        "prod_cooking_spray",
+        "prod_crispy_malt_flakes",
+        "prod_dark_chocolate",
+        "prod_dijon_mustard",
+        "prod_dried_apricots",
+        "prod_gf_bread_codex",
+        "prod_gf_sesame_crackers",
+        "prod_lupin_pasta",
+        "prod_nut_free_granola_bar",
+        "prod_oat_barista_drink",
+        "prod_peanut_butter",
+        "prod_rye_sourdough",
+        "prod_sesame_hummus",
+        "prod_soy_sauce",
+        "prod_tamari",
+        "prod_trail_mix",
+        "prod_wheat_glucose_candy"
+      ],
+      "agreement_with_engine": {
+        "both": 20,
+        "only_owl": [],
+        "only_engine": []
+      }
+    },
+    "ec3": {
+      "title": "Claims as axioms: one false claim makes the ontology inconsistent",
+      "reasoner": {
+        "reasoner": "pellet",
+        "status": "inconsistent",
+        "seconds": 0.912,
+        "message": "Java error message is: ERROR: Ontology is inconsistent, run \"pellet explain\" to get the reason\n",
+        "unsatisfiable_classes": []
+      },
+      "reasoner_used": "pellet",
+      "explanation": "VeganLabelledProduct is declared disjoint from NonVeganProduct. Products such as Smoky Steakhouse Sauce are both, so no model exists and every query becomes meaningless."
+    },
+    "ec4": {
+      "title": "A data-entry error makes the ontology inconsistent",
+      "reasoner": {
+        "reasoner": "pellet",
+        "status": "inconsistent",
+        "seconds": 0.85,
+        "message": "Java error message is: ERROR: Ontology is inconsistent, run \"pellet explain\" to get the reason\n",
+        "unsatisfiable_classes": []
+      },
+      "reasoner_used": "pellet",
+      "injected_error": "ing_honey typed as PlantDerivedIngredient as well as BeeProduct"
+    },
+    "cq12": {
+      "reasoner": {
+        "reasoner": "pellet",
+        "status": "consistent",
+        "seconds": 2188.897,
+        "message": "",
+        "unsatisfiable_classes": []
+      },
+      "reasoner_used": "pellet",
+      "inferred_classes": [
+        "AllergenContainingProduct",
+        "ClaimConflictProduct",
+        "ContainsGlutenCerealsProduct",
+        "ContainsGlutenProduct",
+        "ContainsSesameProduct",
+        "ContainsWheatProduct",
+        "FoodEntity",
+        "GlutenContainingProduct",
+        "MultiMarketProduct",
+        "NonVeganProduct"
+      ],
+      "containsAllergen": [
+        "alg_gluten",
+        "alg_gluten_cereals",
+        "alg_sesame",
+        "alg_wheat"
+      ],
+      "contradictsClaim": [
+        "claim_vegan"
+      ],
+      "mustDeclareInEU": [
+        "alg_sesame",
+        "alg_wheat"
+      ],
+      "mustDeclareInCanada": [
+        "alg_sesame",
+        "alg_wheat"
+      ]
+    }
+  },
+  "owl_timeout_s": 150,
+  "bench_earlier": [
+    {
+      "factor": 1,
+      "products": 45,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.053,
+      "reasoning_seconds": 5.817,
+      "message": ""
+    },
+    {
+      "factor": 2,
+      "products": 90,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.059,
+      "reasoning_seconds": 20.856,
+      "message": ""
+    },
+    {
+      "factor": 4,
+      "products": 180,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.078,
+      "reasoning_seconds": 103.161,
+      "message": ""
+    },
+    {
+      "factor": 8,
+      "products": 360,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.109,
+      "reasoning_seconds": 789.126,
+      "message": ""
+    }
+  ]
+}

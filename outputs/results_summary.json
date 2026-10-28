@@ -1,0 +1,406 @@
+{
+  "falcon_version": "1.1.0",
+  "knowledge_base": {
+    "products": 45,
+    "ingredients": 149,
+    "allergens": 28,
+    "jurisdictions": 3,
+    "label_claims": 10,
+    "categories": 17,
+    "consumers": 9,
+    "exemptions": 1,
+    "compound_ingredients": 6,
+    "products_with_claims": 35,
+    "incomplete_records": 2
+  },
+  "engine": {
+    "base_facts": 1174,
+    "total_facts": 4067,
+    "derived_facts": 2893,
+    "rules": 271,
+    "rules_that_fired": 155,
+    "strata": 8,
+    "iterations_per_stratum": {
+      "0": 6,
+      "1": 3,
+      "2": 3,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 2
+    },
+    "derived_by_rule_source": {
+      "tbox": 1343,
+      "tbox-typing": 10,
+      "swrl": 312,
+      "engine": 1138,
+      "integrity": 90
+    },
+    "elapsed_s": 0.1275
+  },
+  "rules_by_source": {
+    "engine": 39,
+    "integrity": 10,
+    "swrl": 17,
+    "tbox": 143,
+    "tbox-typing": 62
+  },
+  "backward_chaining": {
+    "showcase": [
+      {
+        "goal": "containsAllergen(prod_steakhouse_sauce, alg_fish)",
+        "holds_backward": true,
+        "backward_ms": 6.62,
+        "proof_size": 6,
+        "proof_depth": 3
+      },
+      {
+        "goal": "contradictsClaim(prod_steakhouse_sauce, claim_vegan)",
+        "holds_backward": true,
+        "backward_ms": 1.4,
+        "proof_size": 10,
+        "proof_depth": 5
+      },
+      {
+        "goal": "undeclaredAllergen(prod_pesto_genovese, alg_pine_nut, jur_us)",
+        "holds_backward": true,
+        "backward_ms": 0.18,
+        "proof_size": 10,
+        "proof_depth": 4
+      },
+      {
+        "goal": "unsafeFor(prod_gf_bread_codex, cons_wei)",
+        "holds_backward": true,
+        "backward_ms": 4.59,
+        "proof_size": 9,
+        "proof_depth": 4
+      },
+      {
+        "goal": "containsAllergen(prod_cooking_spray, alg_soy)",
+        "holds_backward": true,
+        "backward_ms": 1.75,
+        "proof_size": 6,
+        "proof_depth": 3
+      },
+      {
+        "goal": "hiddenAllergenVia(prod_aged_cheese_lysozyme, alg_egg, ing_lysozyme)",
+        "holds_backward": true,
+        "backward_ms": 0.21,
+        "proof_size": 10,
+        "proof_depth": 4
+      },
+      {
+        "goal": "confirmedSafeFor(prod_tamari, cons_liam)",
+        "holds_backward": true,
+        "backward_ms": 10.4,
+        "proof_size": 9,
+        "proof_depth": 3
+      },
+      {
+        "goal": "declarationDuty(prod_dried_apricots, alg_sulphites, jur_canada)",
+        "holds_backward": true,
+        "backward_ms": 1.86,
+        "proof_size": 6,
+        "proof_depth": 2
+      }
+    ],
+    "stats": {
+      "goals": 4132,
+      "loop_checks": 1421,
+      "naf_subproofs": 17,
+      "tabling_passes": 6
+    }
+  },
+  "competency_questions": {
+    "CQ01": 14,
+    "CQ02": 1,
+    "CQ03": 10,
+    "CQ04": 2,
+    "CQ05": 9,
+    "CQ06": 34,
+    "CQ07": 45,
+    "CQ08": 62,
+    "CQ09": 10,
+    "CQ10": 2,
+    "CQ11": 10,
+    "CQ12": 7,
+    "CQ13": 21,
+    "CQ14": 45
+  },
+  "insights": {
+    "claims_total": 45,
+    "claim_audit": {
+      "VERIFIED": 30,
+      "CONTRADICTED": 10,
+      "AT RISK": 2,
+      "INFORMATIONAL": 1,
+      "UNVERIFIABLE": 2
+    },
+    "products_with_undeclared_allergen": 10,
+    "undeclared_by_market": {
+      "Canada": 8,
+      "European Union": 5,
+      "United States": 4
+    },
+    "undeclared_pairs": 17,
+    "supplier_checks": 4,
+    "hidden_allergen_findings": 10,
+    "products_with_hidden_allergen": 9,
+    "market_disagreements": 11,
+    "multi_market_products": 40,
+    "naive_screening": {
+      "precision": 0.821,
+      "recall": 0.821,
+      "f1": 0.821,
+      "false_positives": 10,
+      "false_negatives": 10
+    },
+    "naive_closed_world_false_assurances": 23,
+    "confirmed_safe_pairs": 328,
+    "verified_vegan_products": 20,
+    "allergen_prevalence": {
+      "Cereals containing gluten": 12,
+      "Milk": 11,
+      "Gluten (coeliac hazard)": 10,
+      "Egg": 6,
+      "Soybean": 6,
+      "Tree nuts": 5,
+      "Fish": 3,
+      "Mustard": 3,
+      "Crustacean shellfish": 3,
+      "Peanut": 3,
+      "Celery": 2,
+      "Sulphur dioxide and sulphites": 2,
+      "Sesame": 2,
+      "Lupin": 1,
+      "Molluscs": 1
+    },
+    "consumer_outcomes": {
+      "Maya (cow's milk allergy)": {
+        "unsafe": 11,
+        "caution": 1,
+        "uncertain": 0,
+        "confirmed safe": 31,
+        "unsuitable for diet": 0
+      },
+      "Liam (peanut and tree nut allergy)": {
+        "unsafe": 7,
+        "caution": 2,
+        "uncertain": 0,
+        "confirmed safe": 34,
+        "unsuitable for diet": 0
+      },
+      "Sofia (coeliac disease)": {
+        "unsafe": 10,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 33,
+        "unsuitable for diet": 0
+      },
+      "Wei (wheat allergy, not coeliac)": {
+        "unsafe": 8,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 35,
+        "unsuitable for diet": 0
+      },
+      "Noah (shellfish allergy)": {
+        "unsafe": 3,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 40,
+        "unsuitable for diet": 0
+      },
+      "Omar (soy and egg allergy)": {
+        "unsafe": 12,
+        "caution": 0,
+        "uncertain": 1,
+        "confirmed safe": 30,
+        "unsuitable for diet": 0
+      },
+      "Lena (sulphite-sensitive asthma)": {
+        "unsafe": 2,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 41,
+        "unsuitable for diet": 0
+      },
+      "Emma (vegetarian, sesame allergy)": {
+        "unsafe": 2,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 41,
+        "unsuitable for diet": 10
+      },
+      "Arjun (vegan)": {
+        "unsafe": 0,
+        "caution": 0,
+        "uncertain": 0,
+        "confirmed safe": 43,
+        "unsuitable for diet": 21
+      }
+    }
+  },
+  "owl": {
+    "status": "ok",
+    "java": {
+      "java": "/opt/java25/bin/java",
+      "source": "FALCON_JAVA",
+      "version": "openjdk version \"25.0.5\" 2026-10-20 LTS",
+      "major": 25,
+      "found": [
+        [
+          25,
+          "/opt/java25/bin/java"
+        ],
+        [
+          21,
+          "/usr/bin/java"
+        ]
+      ]
+    },
+    "owlready2_version": "0.51",
+    "build_seconds": 0.056,
+    "build_report": {
+      "classes": 62,
+      "defined_classes": 30,
+      "object_properties": 29,
+      "data_properties": 4,
+      "annotation_properties": 4,
+      "individuals": 262,
+      "property_chains": 4,
+      "general_class_axioms": 3,
+      "restrictions": 8,
+      "disjointness_axioms": 6,
+      "swrl_rules": 17,
+      "swrl_fallbacks": [],
+      "warnings": []
+    },
+    "triples_asserted": 3233,
+    "pellet": {
+      "reasoner": "pellet",
+      "status": "consistent",
+      "seconds": 2074.961,
+      "message": "",
+      "unsatisfiable_classes": []
+    },
+    "hermit": {
+      "reasoner": "hermit",
+      "status": "consistent",
+      "seconds": 5.798,
+      "message": "",
+      "unsatisfiable_classes": []
+    },
+    "materializer": "pellet",
+    "facts_inferred": 888,
+    "triples_after_reasoning": 3938,
+    "sparql_rows_before_after": [
+      {
+        "cq": "CQ01",
+        "rows before reasoning": 0,
+        "rows after reasoning": 14
+      },
+      {
+        "cq": "CQ02",
+        "rows before reasoning": 0,
+        "rows after reasoning": 1
+      },
+      {
+        "cq": "CQ03",
+        "rows before reasoning": 0,
+        "rows after reasoning": 10
+      },
+      {
+        "cq": "CQ04",
+        "rows before reasoning": 0,
+        "rows after reasoning": 2
+      },
+      {
+        "cq": "CQ05",
+        "rows before reasoning": 0,
+        "rows after reasoning": 9
+      },
+      {
+        "cq": "CQ06",
+        "rows before reasoning": 43,
+        "rows after reasoning": 34
+      },
+      {
+        "cq": "CQ07",
+        "rows before reasoning": 0,
+        "rows after reasoning": 170
+      },
+      {
+        "cq": "CQ08",
+        "rows before reasoning": 0,
+        "rows after reasoning": 139
+      },
+      {
+        "cq": "CQ09",
+        "rows before reasoning": 0,
+        "rows after reasoning": 0
+      },
+      {
+        "cq": "CQ10",
+        "rows before reasoning": 0,
+        "rows after reasoning": 2
+      },
+      {
+        "cq": "CQ11",
+        "rows before reasoning": 14250,
+        "rows after reasoning": 14260
+      },
+      {
+        "cq": "CQ13",
+        "rows before reasoning": 0,
+        "rows after reasoning": 16
+      },
+      {
+        "cq": "CQ14",
+        "rows before reasoning": 45,
+        "rows after reasoning": 35
+      }
+    ],
+    "cq12_owl": {
+      "reasoner": {
+        "reasoner": "pellet",
+        "status": "consistent",
+        "seconds": 2188.897,
+        "message": "",
+        "unsatisfiable_classes": []
+      },
+      "reasoner_used": "pellet",
+      "inferred_classes": [
+        "AllergenContainingProduct",
+        "ClaimConflictProduct",
+        "ContainsGlutenCerealsProduct",
+        "ContainsGlutenProduct",
+        "ContainsSesameProduct",
+        "ContainsWheatProduct",
+        "FoodEntity",
+        "GlutenContainingProduct",
+        "MultiMarketProduct",
+        "NonVeganProduct"
+      ],
+      "containsAllergen": [
+        "alg_gluten",
+        "alg_gluten_cereals",
+        "alg_sesame",
+        "alg_wheat"
+      ],
+      "contradictsClaim": [
+        "claim_vegan"
+      ],
+      "mustDeclareInEU": [
+        "alg_sesame",
+        "alg_wheat"
+      ],
+      "mustDeclareInCanada": [
+        "alg_sesame",
+        "alg_wheat"
+      ]
+    }
+  },
+  "runtime_s": 7326.87
+}

@@ -1,0 +1,267 @@
+Forward-chaining trace for Smoky Steakhouse Sauce (prod_steakhouse_sauce)
+56 derivation steps, in the order the engine produced them.
+
+step   109 | stratum 0 | iteration 1 | rule T-SC-FishIngredient-AnimalDerivedIngredient
+    derived:  AnimalDerivedIngredient(ing_anchovy)
+    because:  FishIngredient(ing_anchovy)
+step   248 | stratum 0 | iteration 1 | rule T-DEF-MultiMarketProduct-1
+    derived:  MultiMarketProduct(prod_steakhouse_sauce)
+    because:  Product(prod_steakhouse_sauce)
+    because:  soldIn(prod_steakhouse_sauce, jur_canada)
+    because:  soldIn(prod_steakhouse_sauce, jur_us)
+    test:     notEqual(jur_canada, jur_us)
+step   265 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_worcestershire_sauce, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+step   304 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_salt, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_salt)
+step   326 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_vinegar, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_vinegar)
+step   354 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_onion, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_onion)
+step   380 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_paprika, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_paprika)
+step   422 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_tomato, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_tomato)
+step   436 | stratum 0 | iteration 1 | rule T-INV-isIngredientOf
+    derived:  isIngredientOf(ing_sugar, prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_sugar)
+step   580 | stratum 0 | iteration 1 | rule T-CH-2
+    derived:  triggersAllergen(ing_worcestershire_sauce, alg_fish)
+    because:  hasComponent(ing_worcestershire_sauce, ing_anchovy)
+    because:  triggersAllergen(ing_anchovy, alg_fish)
+step   654 | stratum 0 | iteration 1 | rule E11
+    derived:  hasSomeIngredient(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+step   711 | stratum 0 | iteration 1 | rule I01
+    derived:  hasBarcodeValue(prod_steakhouse_sauce)
+    because:  hasBarcode(prod_steakhouse_sauce, "FALCON-0004")
+step   783 | stratum 0 | iteration 1 | rule I03
+    derived:  soldSomewhere(prod_steakhouse_sauce)
+    because:  soldIn(prod_steakhouse_sauce, jur_us)
+step   819 | stratum 0 | iteration 2 | rule T-DEF-NonVeganIngredient-1
+    derived:  NonVeganIngredient(ing_anchovy)
+    because:  AnimalDerivedIngredient(ing_anchovy)
+step   828 | stratum 0 | iteration 2 | rule T-DEF-NonVeganIngredient-2
+    derived:  NonVeganIngredient(ing_worcestershire_sauce)
+    because:  AnimalDerivedIngredient(ing_anchovy)
+    because:  hasComponent(ing_worcestershire_sauce, ing_anchovy)
+step   840 | stratum 0 | iteration 2 | rule T-DEF-NonVegetarianIngredient-1
+    derived:  NonVegetarianIngredient(ing_anchovy)
+    because:  VegetarianIncompatibleIngredient(ing_anchovy)
+step   849 | stratum 0 | iteration 2 | rule T-DEF-NonVegetarianIngredient-2
+    derived:  NonVegetarianIngredient(ing_worcestershire_sauce)
+    because:  VegetarianIncompatibleIngredient(ing_anchovy)
+    because:  hasComponent(ing_worcestershire_sauce, ing_anchovy)
+step   945 | stratum 0 | iteration 2 | rule R01
+    derived:  containsAllergen(prod_steakhouse_sauce, alg_fish)
+    because:  triggersAllergen(ing_worcestershire_sauce, alg_fish)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+step  1045 | stratum 0 | iteration 2 | rule E01
+    derived:  containsVia(prod_steakhouse_sauce, alg_fish, ing_worcestershire_sauce)
+    because:  triggersAllergen(ing_worcestershire_sauce, alg_fish)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+step  1174 | stratum 0 | iteration 3 | rule T-DEF-NonVeganProduct-1
+    derived:  NonVeganProduct(prod_steakhouse_sauce)
+    because:  NonVeganIngredient(ing_worcestershire_sauce)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+step  1190 | stratum 0 | iteration 3 | rule T-DEF-NonVegetarianProduct-1
+    derived:  NonVegetarianProduct(prod_steakhouse_sauce)
+    because:  NonVegetarianIngredient(ing_worcestershire_sauce)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+step  1202 | stratum 0 | iteration 3 | rule T-DEF-AllergenContainingProduct-1
+    derived:  AllergenContainingProduct(prod_steakhouse_sauce)
+    because:  containsAllergen(prod_steakhouse_sauce, alg_fish)
+    because:  Product(prod_steakhouse_sauce)
+step  1253 | stratum 0 | iteration 3 | rule T-DEF-ContainsFishProduct
+    derived:  ContainsFishProduct(prod_steakhouse_sauce)
+    because:  containsAllergen(prod_steakhouse_sauce, alg_fish)
+    because:  Product(prod_steakhouse_sauce)
+step  1336 | stratum 0 | iteration 3 | rule R11
+    derived:  mustDeclareInUS(prod_steakhouse_sauce, alg_fish)
+    because:  containsAllergen(prod_steakhouse_sauce, alg_fish)
+    because:  soldIn(prod_steakhouse_sauce, jur_us)
+    because:  USJurisdiction(jur_us)
+    because:  requiresDeclarationOf(jur_us, alg_fish)
+step  1358 | stratum 0 | iteration 3 | rule R12
+    derived:  mustDeclareInCanada(prod_steakhouse_sauce, alg_fish)
+    because:  containsAllergen(prod_steakhouse_sauce, alg_fish)
+    because:  soldIn(prod_steakhouse_sauce, jur_canada)
+    because:  CanadaJurisdiction(jur_canada)
+    because:  requiresDeclarationOf(jur_canada, alg_fish)
+step  1425 | stratum 0 | iteration 4 | rule T-SP-mustDeclareInUS
+    derived:  mustDeclare(prod_steakhouse_sauce, alg_fish)
+    because:  mustDeclareInUS(prod_steakhouse_sauce, alg_fish)
+step  1474 | stratum 0 | iteration 4 | rule R03
+    derived:  contradictsClaim(prod_steakhouse_sauce, claim_vegan)
+    because:  NonVeganProduct(prod_steakhouse_sauce)
+    because:  hasLabelClaim(prod_steakhouse_sauce, claim_vegan)
+    because:  VeganClaim(claim_vegan)
+step  1505 | stratum 0 | iteration 4 | rule R09
+    derived:  unsuitableForDietOf(prod_steakhouse_sauce, cons_arjun)
+    because:  NonVeganProduct(prod_steakhouse_sauce)
+    because:  VeganConsumer(cons_arjun)
+step  1511 | stratum 0 | iteration 4 | rule R10
+    derived:  unsuitableForDietOf(prod_steakhouse_sauce, cons_emma)
+    because:  NonVegetarianProduct(prod_steakhouse_sauce)
+    because:  VegetarianConsumer(cons_emma)
+step  1544 | stratum 0 | iteration 5 | rule T-DEF-ClaimConflictProduct-1
+    derived:  ClaimConflictProduct(prod_steakhouse_sauce)
+    because:  contradictsClaim(prod_steakhouse_sauce, claim_vegan)
+    because:  Product(prod_steakhouse_sauce)
+step  1561 | stratum 0 | iteration 5 | rule A08
+    derived:  claimContradicted(prod_steakhouse_sauce, claim_vegan)
+    because:  contradictsClaim(prod_steakhouse_sauce, claim_vegan)
+step  1604 | stratum 1 | iteration 1 | rule E04
+    derived:  declarationDuty(prod_steakhouse_sauce, alg_fish, jur_canada)
+    because:  containsVia(prod_steakhouse_sauce, alg_fish, ing_worcestershire_sauce)
+    because:  soldIn(prod_steakhouse_sauce, jur_canada)
+    because:  requiresDeclarationOf(jur_canada, alg_fish)
+    and not:  exemptFromDeclaration(ing_worcestershire_sauce, alg_fish, jur_canada)
+step  1605 | stratum 1 | iteration 1 | rule E04
+    derived:  declarationDuty(prod_steakhouse_sauce, alg_fish, jur_us)
+    because:  containsVia(prod_steakhouse_sauce, alg_fish, ing_worcestershire_sauce)
+    because:  soldIn(prod_steakhouse_sauce, jur_us)
+    because:  requiresDeclarationOf(jur_us, alg_fish)
+    and not:  exemptFromDeclaration(ing_worcestershire_sauce, alg_fish, jur_us)
+step  1719 | stratum 1 | iteration 1 | rule E10
+    derived:  hiddenAllergenVia(prod_steakhouse_sauce, alg_fish, ing_worcestershire_sauce)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+    because:  triggersAllergen(ing_worcestershire_sauce, alg_fish)
+    and not:  assertedTrigger(ing_worcestershire_sauce, alg_fish)
+    and not:  mentionsAllergen(ing_worcestershire_sauce, alg_fish)
+step  1730 | stratum 1 | iteration 1 | rule E18
+    derived:  hasNonVeganSafeComponent(ing_worcestershire_sauce)
+    because:  hasComponent(ing_worcestershire_sauce, ing_anchovy)
+    and not:  SimpleVeganSafe(ing_anchovy)
+step  1736 | stratum 1 | iteration 2 | rule E08
+    derived:  undeclaredAllergen(prod_steakhouse_sauce, alg_fish, jur_us)
+    because:  declarationDuty(prod_steakhouse_sauce, alg_fish, jur_us)
+    and not:  declaresAllergen(prod_steakhouse_sauce, alg_fish)
+step  1747 | stratum 1 | iteration 2 | rule E08
+    derived:  undeclaredAllergen(prod_steakhouse_sauce, alg_fish, jur_canada)
+    because:  declarationDuty(prod_steakhouse_sauce, alg_fish, jur_canada)
+    and not:  declaresAllergen(prod_steakhouse_sauce, alg_fish)
+step  1783 | stratum 2 | iteration 1 | rule T-SC-Product-FoodEntity
+    derived:  FoodEntity(prod_steakhouse_sauce)
+    because:  Product(prod_steakhouse_sauce)
+step  1952 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-1
+    derived:  VeganSafeIngredient(ing_tamarind)
+    because:  PlantDerivedIngredient(ing_tamarind)
+step  1973 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-1
+    derived:  VeganSafeIngredient(ing_onion)
+    because:  PlantDerivedIngredient(ing_onion)
+step  1982 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-1
+    derived:  VeganSafeIngredient(ing_paprika)
+    because:  PlantDerivedIngredient(ing_paprika)
+step  2001 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-1
+    derived:  VeganSafeIngredient(ing_sugar)
+    because:  PlantDerivedIngredient(ing_sugar)
+step  2016 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-1
+    derived:  VeganSafeIngredient(ing_tomato)
+    because:  PlantDerivedIngredient(ing_tomato)
+step  2041 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-2
+    derived:  VeganSafeIngredient(ing_salt)
+    because:  OtherOriginIngredient(ing_salt)
+step  2044 | stratum 2 | iteration 1 | rule T-DEF-VeganSafeIngredient-2
+    derived:  VeganSafeIngredient(ing_vinegar)
+    because:  OtherOriginIngredient(ing_vinegar)
+step  2068 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_omar)
+    because:  Consumer(cons_omar)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_omar)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_omar)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_omar)
+step  2103 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_noah)
+    because:  Consumer(cons_noah)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_noah)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_noah)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_noah)
+step  2145 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_emma)
+    because:  Consumer(cons_emma)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_emma)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_emma)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_emma)
+step  2177 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_maya)
+    because:  Consumer(cons_maya)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_maya)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_maya)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_maya)
+step  2211 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_wei)
+    because:  Consumer(cons_wei)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_wei)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_wei)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_wei)
+step  2247 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_liam)
+    because:  Consumer(cons_liam)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_liam)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_liam)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_liam)
+step  2287 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_arjun)
+    because:  Consumer(cons_arjun)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_arjun)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_arjun)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_arjun)
+step  2328 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_lena)
+    because:  Consumer(cons_lena)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_lena)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_lena)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_lena)
+step  2364 | stratum 2 | iteration 1 | rule E13
+    derived:  confirmedSafeFor(prod_steakhouse_sauce, cons_sofia)
+    because:  Consumer(cons_sofia)
+    because:  Product(prod_steakhouse_sauce)
+    because:  hasIngredientListStatus(prod_steakhouse_sauce, complete)
+    because:  hasSomeIngredient(prod_steakhouse_sauce)
+    and not:  unsafeFor(prod_steakhouse_sauce, cons_sofia)
+    and not:  cautionFor(prod_steakhouse_sauce, cons_sofia)
+    and not:  uncertainFor(prod_steakhouse_sauce, cons_sofia)
+step  2649 | stratum 3 | iteration 1 | rule E20
+    derived:  hasNonVeganSafeIngredient(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+    and not:  VeganSafeIngredient(ing_worcestershire_sauce)
+step  2819 | stratum 5 | iteration 1 | rule E29
+    derived:  hasNonVegetarianSafeIngredient(prod_steakhouse_sauce)
+    because:  hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)
+    and not:  VegetarianSafeIngredient(ing_worcestershire_sauce)

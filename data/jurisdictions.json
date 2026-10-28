@@ -1,0 +1,43 @@
+{
+  "_about": "Declaration duties per market. Tree nuts and gluten cereals are listed at the specific level because the markets disagree on members (pine nut is a tree nut for FDA and Health Canada but not under EU Annex II). Sulphites are handled by numeric threshold rules instead of this list, because the thresholds differ (US/Canada: 10 ppm or more; EU: more than 10 mg/kg).",
+  "jurisdictions": [
+    {
+      "id": "jur_us",
+      "label": "United States",
+      "class": "USJurisdiction",
+      "regulatory_basis": "Federal Food, Drug, and Cosmetic Act as amended by FALCPA (2004) and the FASTER Act (2021); FDA Food Allergen Q&A Guidance, Edition 5 (2025); 21 CFR 101.100(a)(4) for sulfites.",
+      "requires_declaration_of": [
+        "alg_milk", "alg_egg", "alg_fish", "alg_crustacean",
+        "alg_almond", "alg_hazelnut", "alg_walnut", "alg_cashew", "alg_pecan",
+        "alg_pistachio", "alg_brazil_nut", "alg_macadamia", "alg_pine_nut",
+        "alg_peanut", "alg_wheat", "alg_soy", "alg_sesame"
+      ]
+    },
+    {
+      "id": "jur_canada",
+      "label": "Canada",
+      "class": "CanadaJurisdiction",
+      "regulatory_basis": "Food and Drug Regulations (enhanced labelling for food allergens, gluten sources and added sulphites, in force 4 August 2012); Health Canada priority food allergens.",
+      "requires_declaration_of": [
+        "alg_milk", "alg_egg", "alg_fish", "alg_crustacean", "alg_mollusc",
+        "alg_almond", "alg_hazelnut", "alg_walnut", "alg_cashew", "alg_pecan",
+        "alg_pistachio", "alg_brazil_nut", "alg_macadamia", "alg_pine_nut",
+        "alg_peanut", "alg_wheat", "alg_barley", "alg_rye", "alg_oats",
+        "alg_soy", "alg_sesame", "alg_mustard"
+      ]
+    },
+    {
+      "id": "jur_eu",
+      "label": "European Union",
+      "class": "EUJurisdiction",
+      "regulatory_basis": "Regulation (EU) No 1169/2011 on the provision of food information to consumers, Annex II (14 substances or products causing allergies or intolerances).",
+      "requires_declaration_of": [
+        "alg_wheat", "alg_barley", "alg_rye", "alg_oats",
+        "alg_crustacean", "alg_egg", "alg_fish", "alg_peanut", "alg_soy", "alg_milk",
+        "alg_almond", "alg_hazelnut", "alg_walnut", "alg_cashew", "alg_pecan",
+        "alg_brazil_nut", "alg_pistachio", "alg_macadamia",
+        "alg_celery", "alg_mustard", "alg_sesame", "alg_lupin", "alg_mollusc"
+      ]
+    }
+  ]
+}

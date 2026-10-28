@@ -1,0 +1,1009 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon-inferred.owl"
+         xmlns="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon-inferred.owl#"
+         xmlns:falc="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon-inferred.owl"/>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PlantDerivedIngredient">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#VeganSafeIngredient"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AnimalDerivedIngredient">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganIngredient"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#VegetarianIncompatibleIngredient">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianIngredient"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#OtherOriginIngredient">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#VeganSafeIngredient"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsGlutenProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_cream">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_butter">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_cream"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_ghee">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_cream"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_butter"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_cream"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_whey">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_whey_powder">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_whey"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_casein">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_sodium_caseinate">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_casein"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_lactose">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_whey"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_skimmed_milk_powder">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_whole_milk_powder">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_buttermilk">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_mozzarella">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<falc:NonVegetarianIngredient rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_parmesan">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:NonVegetarianIngredient>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_lactose_free_milk">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg_yolk">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg_white">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_lysozyme">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg_white"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_egg"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+</rdf:Description>
+
+<falc:NonVeganIngredient rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_mayonnaise">
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+</falc:NonVeganIngredient>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_fish_sauce">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_anchovy"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_surimi">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_fish"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+</rdf:Description>
+
+<falc:NonVeganIngredient rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_worcestershire_sauce">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianIngredient"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+</falc:NonVeganIngredient>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_crab_extract">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_crab"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_shrimp_paste">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_shrimp"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_oyster_sauce">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_oyster"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mollusc"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat_flour">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_durum_semolina">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_spelt_flour">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat_starch">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_codex_wheat_starch">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_breadcrumbs">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat_flour"/>
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:retainsAllergensOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_seitan">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat_glucose_syrup">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_wheat"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_barley_malt_extract">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_barley"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_barley"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_rye_flour">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_rye"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_rye"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_oat_flakes">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_oats"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_gluten_free_oats">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_oats"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_soy_lecithin">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_soybean"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_soy_protein_isolate">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_soybean"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+</rdf:Description>
+
+<falc:GlutenSourceIngredient rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_soy_sauce">
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:GlutenSourceIngredient>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_peanut_butter">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_peanut"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_lupin_flour">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_lupin"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_lupin"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_almond_flour">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_almond"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_hazelnut_paste">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_hazelnut"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_marzipan">
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_praline">
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_tahini">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_sesame_seed"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_sesame_oil">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_sesame_seed"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_celery_seed">
+  <falc:derivedFrom rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_celery"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+</rdf:Description>
+
+<falc:LactoseSourceIngredient rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ing_milk_chocolate">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganIngredient"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:triggersAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:LactoseSourceIngredient>
+
+<falc:ContainsMilkProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_hazelnut_cocoa_spread">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSoyProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsTreeNutsProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_hazelnut"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsMilkProduct>
+
+<falc:ContainsGlutenCerealsProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_oat_barista_drink">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+</falc:ContainsGlutenCerealsProduct>
+
+<falc:ContainsEggProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_caesar_dressing">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsFishProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMilkProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsEggProduct>
+
+<falc:ContainsFishProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_steakhouse_sauce">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegan"/>
+</falc:ContainsFishProduct>
+
+<falc:ContainsMilkProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_non_dairy_whitener">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#OriginUncertainProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsMilkProduct>
+
+<falc:ContainsMilkProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_lactose_free_milk">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsMilkProduct>
+
+<falc:ContainsSesameProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_gf_sesame_crackers">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MeetsGlutenFreeThreshold"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+</falc:ContainsSesameProduct>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_gf_bread_codex">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MeetsGlutenFreeThreshold"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:ContainsWheatProduct>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_rye_sourdough">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_rye"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_rye"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_rye"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_rye"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:ContainsWheatProduct>
+
+<falc:ContainsGlutenCerealsProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_crispy_malt_flakes">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_barley"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_barley"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_barley"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_gluten_free"/>
+</falc:ContainsGlutenCerealsProduct>
+
+<falc:ContainsMilkProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_peanut_butter_cups">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsPeanutProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSoyProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PrecautionaryLabelledProduct"/>
+  <falc:cautionFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsMilkProduct>
+
+<falc:ContainsGlutenCerealsProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_nut_free_granola_bar">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PrecautionaryConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PrecautionaryLabelledProduct"/>
+  <falc:cautionFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:precautionaryConflictWith rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_nut_free"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:mayContain rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+</falc:ContainsGlutenCerealsProduct>
+
+<falc:ContainsEggProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_almond_cookies">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMilkProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsTreeNutsProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MeetsGlutenFreeThreshold"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PrecautionaryLabelledProduct"/>
+  <falc:cautionFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsEggProduct>
+
+<falc:ClaimConflictProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_fruit_gummies">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#OriginUncertainProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegetarian"/>
+</falc:ClaimConflictProduct>
+
+<falc:ClaimConflictProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_vegan_gummies">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegan"/>
+</falc:ClaimConflictProduct>
+
+<falc:ContainsGlutenCerealsProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_honey_oat_bar">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsTreeNutsProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_oats"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegan"/>
+</falc:ContainsGlutenCerealsProduct>
+
+<falc:MultiMarketProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_plant_protein_bar">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#OriginUncertainProduct"/>
+</falc:MultiMarketProduct>
+
+<falc:ContainsSesameProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_sesame_hummus">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sesame"/>
+</falc:ContainsSesameProduct>
+
+<falc:ContainsCeleryProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_celery_salt">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+</falc:ContainsCeleryProduct>
+
+<falc:ContainsMustardProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_dijon_mustard">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSulphitesProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#SulphiteAbove10ppm"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_lena"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sulphites"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+</falc:ContainsMustardProduct>
+
+<falc:ContainsSulphitesProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_dried_apricots">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#SulphiteAtOrAbove10ppm"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_lena"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_sulphites"/>
+</falc:ContainsSulphitesProduct>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_lupin_pasta">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsLupinProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_lupin"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_lupin"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_lupin"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:ContainsWheatProduct>
+
+<falc:ContainsCrustaceanProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_seafood_paella_kit">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMolluscProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mollusc"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mollusc"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mollusc"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_noah"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mollusc"/>
+</falc:ContainsCrustaceanProduct>
+
+<falc:ContainsCrustaceanProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_imitation_crab">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsEggProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsFishProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsWheatProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_noah"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_fish"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:ContainsCrustaceanProduct>
+
+<falc:ContainsSoyProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_dark_chocolate">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PrecautionaryConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#PrecautionaryLabelledProduct"/>
+  <falc:cautionFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:cautionFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:precautionaryConflictWith rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_dairy_free"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mayContain rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+</falc:ContainsSoyProduct>
+
+<falc:MultiMarketProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_coconut_drink"/>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_eggplant_parmigiana">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMilkProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegetarian"/>
+</falc:ContainsWheatProduct>
+
+<falc:MultiMarketProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_baking_powder"/>
+
+<falc:ContainsPeanutProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_peanut_butter">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+</falc:ContainsPeanutProduct>
+
+<falc:ContainsMilkProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_ghee">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsMilkProduct>
+
+<falc:ContainsCeleryProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_butternut_soup">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMilkProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_celery"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsCeleryProduct>
+
+<falc:ContainsPeanutProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_trail_mix">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsTreeNutsProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_peanut"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_almond"/>
+</falc:ContainsPeanutProduct>
+
+<falc:ContainsMilkProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_pesto_genovese">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsTreeNutsProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_pine_nut"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_pine_nut"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_pine_nut"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_liam"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_pine_nut"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_cashew"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_tree_nuts"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegetarian"/>
+</falc:ContainsMilkProduct>
+
+<falc:ContainsCrustaceanProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_green_curry_paste">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_noah"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_crustacean"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_vegetarian"/>
+</falc:ContainsCrustaceanProduct>
+
+<falc:NonVeganProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_vitamin_d_gummies">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVegetarianProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#OriginUncertainProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_emma"/>
+</falc:NonVeganProduct>
+
+<falc:IncompleteRecordProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_rice_puffs_incomplete"/>
+
+<falc:IncompleteRecordProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_mystery_snack">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+</falc:IncompleteRecordProduct>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_soy_sauce">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSoyProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_gluten_free"/>
+</falc:ContainsWheatProduct>
+
+<falc:ContainsSoyProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_tamari">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MeetsGlutenFreeThreshold"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+</falc:ContainsSoyProduct>
+
+<falc:ContainsSoyProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_cooking_spray">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_soy"/>
+</falc:ContainsSoyProduct>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_wheat_glucose_candy">
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:ContainsWheatProduct>
+
+<falc:ContainsEggProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_aged_cheese_lysozyme">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMilkProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_maya"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_milk"/>
+</falc:ContainsEggProduct>
+
+<falc:ContainsEggProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_classic_mayonnaise">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMustardProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInEU rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+</falc:ContainsEggProduct>
+
+<falc:ContainsEggProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_coleslaw_egg_free">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMustardProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ClaimConflictProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#NonVeganProduct"/>
+  <falc:unsuitableForDietOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_arjun"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_omar"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_egg"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_mustard"/>
+  <falc:contradictsClaim rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#claim_egg_free"/>
+</falc:ContainsEggProduct>
+
+<falc:ContainsWheatProduct rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#prod_wafer_biscuits">
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#GlutenContainingProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#MultiMarketProduct"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#OriginUncertainProduct"/>
+  <falc:mustDeclareInCanada rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclareInUS rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:mustDeclare rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_wei"/>
+  <falc:unsafeFor rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#cons_sofia"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_gluten_cereals"/>
+  <falc:containsAllergen rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#alg_wheat"/>
+</falc:ContainsWheatProduct>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMilkProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsEggProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsFishProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsCrustaceanProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMolluscProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsTreeNutsProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsPeanutProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSoyProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSesameProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsMustardProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsCeleryProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsLupinProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsSulphitesProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsGlutenCerealsProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsWheatProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsGlutenCerealsProduct"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#ContainsGlutenProduct">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl#AllergenContainingProduct"/>
+</rdf:Description>
+
+
+</rdf:RDF>

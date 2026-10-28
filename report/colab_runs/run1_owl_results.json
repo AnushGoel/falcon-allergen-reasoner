@@ -1,0 +1,49 @@
+{
+  "status": "ok",
+  "java": {
+    "java": "/usr/bin/java",
+    "source": "PATH",
+    "version": "openjdk version \"21.0.12.1\" 2026-08-18"
+  },
+  "owlready2_version": "0.51",
+  "build_seconds": 0.053,
+  "build_report": {
+    "classes": 62,
+    "defined_classes": 30,
+    "object_properties": 29,
+    "data_properties": 4,
+    "annotation_properties": 4,
+    "individuals": 262,
+    "property_chains": 4,
+    "general_class_axioms": 3,
+    "restrictions": 8,
+    "disjointness_axioms": 6,
+    "swrl_rules": 17,
+    "swrl_fallbacks": [],
+    "warnings": []
+  },
+  "triples_asserted": 3233,
+  "pellet": {
+    "reasoner": "pellet",
+    "status": "error",
+    "seconds": 0.5376159209999969,
+    "message": "OwlReadyJavaError: Java error message is:\nException in thread \"main\" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 65.0\n\tat java.base/java.lang.ClassLoader.defineClass1(Native Method)\n\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)\n\tat java.base/java.security.SecureClassLoader.defineClass(SecureClas",
+    "unsatisfiable_classes": []
+  },
+  "hermit": {
+    "reasoner": "hermit",
+    "status": "consistent",
+    "seconds": 5.8377363929998864,
+    "message": "",
+    "unsatisfiable_classes": []
+  },
+  "cq12_owl": {
+    "reasoner": {
+      "reasoner": "pellet",
+      "status": "error",
+      "seconds": 0.5652935089999573,
+      "message": "OwlReadyJavaError: Java error message is:\nException in thread \"main\" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 65.0\n\tat java.base/java.lang.ClassLoader.defineClass1(Native Method)\n\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)\n\tat java.base/java.security.SecureClassLoader.defineClass(SecureClas",
+      "unsatisfiable_classes": []
+    }
+  }
+}

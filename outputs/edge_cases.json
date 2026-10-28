@@ -1,0 +1,432 @@
+{
+  "EC1": {
+    "title": "Incomplete information: open, naive closed and local closed world",
+    "columns": [
+      "assumption",
+      "product-consumer pairs confirmed safe",
+      "products confirmed vegan",
+      "false assurances",
+      "comment"
+    ],
+    "rows": [
+      {
+        "assumption": "Open world (OWL, Pellet, no closure axioms)",
+        "product-consumer pairs confirmed safe": 0,
+        "products confirmed vegan": 0,
+        "false assurances": 0,
+        "comment": "Sound but silent: absence of information never becomes a conclusion."
+      },
+      {
+        "assumption": "Naive closed world (absence of evidence = safe)",
+        "product-consumer pairs confirmed safe": 347,
+        "products confirmed vegan": 24,
+        "false assurances": 23,
+        "comment": "Answers everything, including questions the data cannot support."
+      },
+      {
+        "assumption": "Local closed world (FALCON: only complete records)",
+        "product-consumer pairs confirmed safe": 328,
+        "products confirmed vegan": 20,
+        "false assurances": 0,
+        "comment": "Closes the world only where the record is known to be complete."
+      }
+    ],
+    "false_assurances": [
+      {
+        "product": "Mystery Snack (no ingredient data)",
+        "falsely 'safe' for": 9,
+        "falsely 'vegan'": "yes",
+        "reason": "ingredient record incomplete"
+      },
+      {
+        "product": "Rice Puffs (record incomplete)",
+        "falsely 'safe' for": 9,
+        "falsely 'vegan'": "yes",
+        "reason": "ingredient record incomplete"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "falsely 'safe' for": 1,
+        "falsely 'vegan'": "yes",
+        "reason": "ingredient of unstated origin"
+      },
+      {
+        "product": "Plant Protein Bar",
+        "falsely 'safe' for": 0,
+        "falsely 'vegan'": "yes",
+        "reason": "ingredient of unstated origin"
+      }
+    ]
+  },
+  "EC3": {
+    "title": "Conflicting data handled without explosion",
+    "contradictions": 10,
+    "derived_facts_still_available": 2893,
+    "unsafe_verdicts_still_available": 55,
+    "note": "Claims are modelled as data, so a false claim produces a contradictsClaim fact. In strict OWL mode the same claims are axioms and one false claim makes the whole ontology inconsistent (see the OWL results)."
+  },
+  "EC4": {
+    "title": "Data-entry error isolated by integrity rules",
+    "injected_error": "ing_honey typed as both BeeProduct (animal-derived) and PlantDerivedIngredient",
+    "violations": [
+      {
+        "entity": "Honey",
+        "violated axiom": "PlantDerivedIngredient / AnimalDerivedIngredient"
+      }
+    ],
+    "unsafe_verdicts_before": 55,
+    "unsafe_verdicts_after": 55,
+    "note": "The engine reports the violation and keeps every unrelated conclusion. OWL is classical: an inconsistent ontology entails everything, so the reasoner refuses to answer anything until the error is fixed."
+  },
+  "EC5": {
+    "title": "Ingredients of unstated origin",
+    "columns": [
+      "product",
+      "unclear ingredients",
+      "diet uncertain for",
+      "allergen uncertain for",
+      "supplier checks"
+    ],
+    "rows": [
+      {
+        "product": "Fruit Gummies",
+        "unclear ingredients": "Natural flavouring",
+        "diet uncertain for": "",
+        "allergen uncertain for": "",
+        "supplier checks": ""
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "unclear ingredients": "Mono- and diglycerides of fatty acids (E471), Natural flavouring",
+        "diet uncertain for": "Arjun (vegan), Emma (vegetarian, sesame allergy)",
+        "allergen uncertain for": "",
+        "supplier checks": ""
+      },
+      {
+        "product": "Plant Protein Bar",
+        "unclear ingredients": "Mono- and diglycerides of fatty acids (E471), Natural flavouring",
+        "diet uncertain for": "Arjun (vegan), Emma (vegetarian, sesame allergy)",
+        "allergen uncertain for": "",
+        "supplier checks": ""
+      },
+      {
+        "product": "Vitamin D Gummies",
+        "unclear ingredients": "Vitamin D3 (cholecalciferol)",
+        "diet uncertain for": "",
+        "allergen uncertain for": "",
+        "supplier checks": ""
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "unclear ingredients": "Lecithin (E322, source not stated)",
+        "diet uncertain for": "Arjun (vegan), Emma (vegetarian, sesame allergy)",
+        "allergen uncertain for": "Omar (soy and egg allergy)",
+        "supplier checks": "Egg, Soybean"
+      }
+    ]
+  },
+  "EC6": {
+    "title": "Defeasible exemption and thresholds vs monotonic SWRL",
+    "columns": [
+      "product",
+      "market",
+      "allergen",
+      "monotonic SWRL duty",
+      "defeasible engine duty",
+      "why they differ"
+    ],
+    "rows": [
+      {
+        "product": "Dijon Mustard",
+        "market": "US",
+        "allergen": "Sulphur dioxide and sulphites",
+        "monotonic SWRL duty": "no",
+        "defeasible engine duty": "yes",
+        "why they differ": "numeric threshold rule (sulphites)"
+      },
+      {
+        "product": "Dijon Mustard",
+        "market": "Canada",
+        "allergen": "Sulphur dioxide and sulphites",
+        "monotonic SWRL duty": "no",
+        "defeasible engine duty": "yes",
+        "why they differ": "numeric threshold rule (sulphites)"
+      },
+      {
+        "product": "Dijon Mustard",
+        "market": "EU",
+        "allergen": "Sulphur dioxide and sulphites",
+        "monotonic SWRL duty": "no",
+        "defeasible engine duty": "yes",
+        "why they differ": "numeric threshold rule (sulphites)"
+      },
+      {
+        "product": "Dried Apricots",
+        "market": "US",
+        "allergen": "Sulphur dioxide and sulphites",
+        "monotonic SWRL duty": "no",
+        "defeasible engine duty": "yes",
+        "why they differ": "numeric threshold rule (sulphites)"
+      },
+      {
+        "product": "Dried Apricots",
+        "market": "Canada",
+        "allergen": "Sulphur dioxide and sulphites",
+        "monotonic SWRL duty": "no",
+        "defeasible engine duty": "yes",
+        "why they differ": "numeric threshold rule (sulphites)"
+      },
+      {
+        "product": "Fruit Drops",
+        "market": "EU",
+        "allergen": "Wheat",
+        "monotonic SWRL duty": "yes",
+        "defeasible engine duty": "no",
+        "why they differ": "exempt under Regulation (EU) No 1169/2011, Annex II, point 1(a): wheat-based glucose syrups including dextrose."
+      }
+    ],
+    "note": "SWRL cannot retract a conclusion when an exception applies; the engine's 'not exemptFromDeclaration' can."
+  },
+  "EC7": {
+    "title": "Numeric boundary at exactly 10 mg/kg sulphites",
+    "columns": [
+      "product",
+      "sulphites (mg/kg)",
+      ">= 10 (US/Canada)",
+      "> 10 (EU)",
+      "US",
+      "Canada",
+      "EU"
+    ],
+    "rows": [
+      {
+        "product": "Dijon Mustard",
+        "sulphites (mg/kg)": 45.0,
+        ">= 10 (US/Canada)": "yes",
+        "> 10 (EU)": "yes",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare"
+      },
+      {
+        "product": "Dried Apricots",
+        "sulphites (mg/kg)": 10.0,
+        ">= 10 (US/Canada)": "yes",
+        "> 10 (EU)": "no",
+        "US": "must declare (UNDECLARED)",
+        "Canada": "must declare (UNDECLARED)",
+        "EU": "not required"
+      }
+    ]
+  },
+  "EC8": {
+    "title": "Lexical traps: keyword screening vs ontology",
+    "true_positives": 46,
+    "false_positives": 10,
+    "false_negatives": 10,
+    "precision": 0.821,
+    "recall": 0.821,
+    "f1": 0.821,
+    "false_positive_examples": [
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "flagged as": "Tree nuts",
+        "triggered by": "Coconut oil"
+      },
+      {
+        "product": "Gluten-Free White Loaf",
+        "flagged as": "Fish",
+        "triggered by": "Gluten-free wheat starch (Codex)"
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "flagged as": "Tree nuts",
+        "triggered by": "Peanuts"
+      },
+      {
+        "product": "Dark Chocolate 70%",
+        "flagged as": "Milk",
+        "triggered by": "Cocoa butter"
+      },
+      {
+        "product": "Coconut Drink",
+        "flagged as": "Milk",
+        "triggered by": "Coconut milk"
+      },
+      {
+        "product": "Coconut Drink",
+        "flagged as": "Tree nuts",
+        "triggered by": "Coconut milk"
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "flagged as": "Egg",
+        "triggered by": "Eggplant"
+      },
+      {
+        "product": "Baking Powder",
+        "flagged as": "Milk",
+        "triggered by": "Cream of tartar"
+      },
+      {
+        "product": "Smooth Peanut Butter",
+        "flagged as": "Tree nuts",
+        "triggered by": "Peanuts"
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "flagged as": "Tree nuts",
+        "triggered by": "Butternut squash"
+      }
+    ],
+    "false_negative_examples": [
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "missed": "Fish",
+        "hidden in": "Worcestershire sauce"
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "missed": "Milk",
+        "hidden in": "Sodium caseinate"
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "missed": "Soybean",
+        "hidden in": "Milk chocolate"
+      },
+      {
+        "product": "Classic Hummus",
+        "missed": "Sesame",
+        "hidden in": "Tahini"
+      },
+      {
+        "product": "High-Protein Lupin Pasta",
+        "missed": "Wheat",
+        "hidden in": "Semolina"
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "missed": "Fish",
+        "hidden in": "Surimi"
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "missed": "Wheat",
+        "hidden in": "Breadcrumbs"
+      },
+      {
+        "product": "Aged Hard Cheese",
+        "missed": "Egg",
+        "hidden in": "Lysozyme (E1105)"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "missed": "Mustard",
+        "hidden in": "Mayonnaise"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "missed": "Egg",
+        "hidden in": "Mayonnaise"
+      }
+    ],
+    "note": "Reference = the ontology's containsAllergen conclusions over 14 regulated allergen groups. The naive screener matches allergen keywords as substrings of printed ingredient names."
+  },
+  "EC2": {
+    "title": "Closure axioms make vegan classification possible",
+    "reasoner_used": "pellet",
+    "open": {
+      "reasoner": {
+        "reasoner": "pellet",
+        "status": "consistent",
+        "seconds": 1481.95,
+        "message": "",
+        "unsatisfiable_classes": []
+      },
+      "VeganCompatibleProduct": []
+    },
+    "closed": {
+      "reasoner": {
+        "reasoner": "pellet",
+        "status": "consistent",
+        "seconds": 1571.947,
+        "message": "",
+        "unsatisfiable_classes": []
+      },
+      "VeganCompatibleProduct": [
+        "prod_baking_powder",
+        "prod_celery_salt",
+        "prod_coconut_drink",
+        "prod_cooking_spray",
+        "prod_crispy_malt_flakes",
+        "prod_dark_chocolate",
+        "prod_dijon_mustard",
+        "prod_dried_apricots",
+        "prod_gf_bread_codex",
+        "prod_gf_sesame_crackers",
+        "prod_lupin_pasta",
+        "prod_nut_free_granola_bar",
+        "prod_oat_barista_drink",
+        "prod_peanut_butter",
+        "prod_rye_sourdough",
+        "prod_sesame_hummus",
+        "prod_soy_sauce",
+        "prod_tamari",
+        "prod_trail_mix",
+        "prod_wheat_glucose_candy"
+      ]
+    },
+    "engine_VerifiedVeganProduct": [
+      "prod_baking_powder",
+      "prod_celery_salt",
+      "prod_coconut_drink",
+      "prod_cooking_spray",
+      "prod_crispy_malt_flakes",
+      "prod_dark_chocolate",
+      "prod_dijon_mustard",
+      "prod_dried_apricots",
+      "prod_gf_bread_codex",
+      "prod_gf_sesame_crackers",
+      "prod_lupin_pasta",
+      "prod_nut_free_granola_bar",
+      "prod_oat_barista_drink",
+      "prod_peanut_butter",
+      "prod_rye_sourdough",
+      "prod_sesame_hummus",
+      "prod_soy_sauce",
+      "prod_tamari",
+      "prod_trail_mix",
+      "prod_wheat_glucose_candy"
+    ],
+    "agreement_with_engine": {
+      "both": 20,
+      "only_owl": [],
+      "only_engine": []
+    }
+  },
+  "EC3_owl": {
+    "title": "Claims as axioms: one false claim makes the ontology inconsistent",
+    "reasoner": {
+      "reasoner": "pellet",
+      "status": "inconsistent",
+      "seconds": 0.912,
+      "message": "Java error message is: ERROR: Ontology is inconsistent, run \"pellet explain\" to get the reason\n",
+      "unsatisfiable_classes": []
+    },
+    "reasoner_used": "pellet",
+    "explanation": "VeganLabelledProduct is declared disjoint from NonVeganProduct. Products such as Smoky Steakhouse Sauce are both, so no model exists and every query becomes meaningless."
+  },
+  "EC4_owl": {
+    "title": "A data-entry error makes the ontology inconsistent",
+    "reasoner": {
+      "reasoner": "pellet",
+      "status": "inconsistent",
+      "seconds": 0.85,
+      "message": "Java error message is: ERROR: Ontology is inconsistent, run \"pellet explain\" to get the reason\n",
+      "unsatisfiable_classes": []
+    },
+    "reasoner_used": "pellet",
+    "injected_error": "ing_honey typed as PlantDerivedIngredient as well as BeeProduct"
+  }
+}

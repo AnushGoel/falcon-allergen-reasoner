@@ -1,0 +1,1753 @@
+{
+  "CQ01": {
+    "columns": [
+      "ingredient",
+      "how it is known"
+    ],
+    "rows": [
+      {
+        "ingredient": "Buttermilk",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Casein",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Cream",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Lactose-free milk",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Mozzarella cheese",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Parmesan cheese",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Skimmed milk powder",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Whey",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Whole milk powder",
+        "how it is known": "asserted"
+      },
+      {
+        "ingredient": "Butter",
+        "how it is known": "inferred (sub-property + transitivity)"
+      },
+      {
+        "ingredient": "Ghee (clarified butter)",
+        "how it is known": "inferred (sub-property + transitivity)"
+      },
+      {
+        "ingredient": "Lactose",
+        "how it is known": "inferred (sub-property + transitivity)"
+      },
+      {
+        "ingredient": "Sodium caseinate",
+        "how it is known": "inferred (sub-property + transitivity)"
+      },
+      {
+        "ingredient": "Whey powder",
+        "how it is known": "inferred (sub-property + transitivity)"
+      }
+    ],
+    "note": "9 ingredients asserted as made directly from milk; reasoning finds 14 in total.",
+    "question": "Which ingredients are made from milk, directly or indirectly?",
+    "kind": "lookup + transitive reasoning",
+    "sparql": "SELECT DISTINCT ?ingredient WHERE { ?ingredient falcon:derivedFrom falcon:ing_milk . }"
+  },
+  "CQ02": {
+    "columns": [
+      "allergen",
+      "via ingredient",
+      "hidden from shoppers"
+    ],
+    "rows": [
+      {
+        "allergen": "Fish",
+        "via ingredient": "Worcestershire sauce",
+        "hidden from shoppers": "yes"
+      }
+    ],
+    "proof": "containsAllergen(prod_steakhouse_sauce, alg_fish)   [R01: Product allergen detection]\n|-- Product(prod_steakhouse_sauce)   [asserted fact]\n|-- hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)   [asserted fact]\n`-- triggersAllergen(ing_worcestershire_sauce, alg_fish)   [T-CH-2: hasComponent ∘ triggersAllergen ⊑ triggersAllergen]\n    |-- hasComponent(ing_worcestershire_sauce, ing_anchovy)   [asserted fact]\n    `-- triggersAllergen(ing_anchovy, alg_fish)   [asserted fact]",
+    "proof_tree": {
+      "statement": "containsAllergen(prod_steakhouse_sauce, alg_fish)",
+      "how": "R01",
+      "rule_name": "Product allergen detection",
+      "note": "",
+      "children": [
+        {
+          "statement": "Product(prod_steakhouse_sauce)",
+          "how": "FACT",
+          "rule_name": "",
+          "note": "",
+          "children": []
+        },
+        {
+          "statement": "hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)",
+          "how": "FACT",
+          "rule_name": "",
+          "note": "",
+          "children": []
+        },
+        {
+          "statement": "triggersAllergen(ing_worcestershire_sauce, alg_fish)",
+          "how": "T-CH-2",
+          "rule_name": "hasComponent ∘ triggersAllergen ⊑ triggersAllergen",
+          "note": "",
+          "children": [
+            {
+              "statement": "hasComponent(ing_worcestershire_sauce, ing_anchovy)",
+              "how": "FACT",
+              "rule_name": "",
+              "note": "",
+              "children": []
+            },
+            {
+              "statement": "triggersAllergen(ing_anchovy, alg_fish)",
+              "how": "FACT",
+              "rule_name": "",
+              "note": "",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "note": "Backward chaining proves containsAllergen(prod_steakhouse_sauce, alg_fish) from asserted facts only.",
+    "question": "Which allergens does Smoky Steakhouse Sauce contain, and through which ingredient?",
+    "kind": "complex reasoning + proof",
+    "sparql": "SELECT DISTINCT ?allergen WHERE { falcon:prod_steakhouse_sauce falcon:containsAllergen ?allergen . }"
+  },
+  "CQ03": {
+    "columns": [
+      "product",
+      "claim",
+      "rule",
+      "evidence"
+    ],
+    "rows": [
+      {
+        "product": "Creamy Coleslaw",
+        "claim": "Egg-free",
+        "rule": "R02",
+        "evidence": "Egg via Mayonnaise"
+      },
+      {
+        "product": "Crispy Malt Flakes",
+        "claim": "Gluten-free",
+        "rule": "R14",
+        "evidence": "Gluten (coeliac hazard) via Barley malt extract; lab result 45 ppm is not below 20 ppm"
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "claim": "Vegetarian",
+        "rule": "R04",
+        "evidence": "Parmesan cheese (contains Animal rennet)"
+      },
+      {
+        "product": "Fruit Gummies",
+        "claim": "Vegetarian",
+        "rule": "R04",
+        "evidence": "Carmine (E120); Gelatin (pork or beef)"
+      },
+      {
+        "product": "Green Curry Paste",
+        "claim": "Vegetarian",
+        "rule": "R04",
+        "evidence": "Shrimp paste"
+      },
+      {
+        "product": "Honey Oat Bar",
+        "claim": "Vegan",
+        "rule": "R03",
+        "evidence": "Honey"
+      },
+      {
+        "product": "Pesto Genovese",
+        "claim": "Vegetarian",
+        "rule": "R04",
+        "evidence": "Parmesan cheese (contains Animal rennet)"
+      },
+      {
+        "product": "Brewed Soy Sauce",
+        "claim": "Gluten-free",
+        "rule": "R02",
+        "evidence": "Gluten (coeliac hazard) via Wheat"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "claim": "Vegan",
+        "rule": "R03",
+        "evidence": "Worcestershire sauce (contains Anchovy)"
+      },
+      {
+        "product": "Vegan Berry Gummies",
+        "claim": "Vegan",
+        "rule": "R03",
+        "evidence": "Carmine (E120)"
+      }
+    ],
+    "note": "10 of 45 claims are contradicted by the products' own composition.",
+    "question": "Which products contradict their own label claims, and why?",
+    "kind": "rule-based inference",
+    "sparql": "SELECT ?product ?claim WHERE { ?product falcon:contradictsClaim ?claim . } ORDER BY ?product"
+  },
+  "CQ04": {
+    "columns": [
+      "product",
+      "claim",
+      "'may contain'"
+    ],
+    "rows": [
+      {
+        "product": "Dark Chocolate 70%",
+        "claim": "Dairy-free",
+        "'may contain'": "Milk"
+      },
+      {
+        "product": "Nut-Free Granola Bar",
+        "claim": "Nut-free",
+        "'may contain'": "Tree nuts"
+      }
+    ],
+    "question": "Which free-from claims are undermined by a 'may contain' warning?",
+    "kind": "rule-based inference",
+    "sparql": "SELECT ?product ?claim ?allergen WHERE { ?product falcon:precautionaryConflictWith ?claim . ?claim falcon:excludesAllergen ?allergen . ?product falcon:mayContain ?allergen . }"
+  },
+  "CQ05": {
+    "columns": [
+      "product",
+      "status",
+      "because"
+    ],
+    "rows": [
+      {
+        "product": "Almond Butter Cookies",
+        "status": "UNSAFE",
+        "because": "Tree nuts"
+      },
+      {
+        "product": "Classic Trail Mix",
+        "status": "UNSAFE",
+        "because": "Peanut, Tree nuts"
+      },
+      {
+        "product": "Hazelnut Cocoa Spread",
+        "status": "UNSAFE",
+        "because": "Tree nuts"
+      },
+      {
+        "product": "Honey Oat Bar",
+        "status": "UNSAFE",
+        "because": "Tree nuts"
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "status": "UNSAFE",
+        "because": "Peanut"
+      },
+      {
+        "product": "Pesto Genovese",
+        "status": "UNSAFE",
+        "because": "Tree nuts"
+      },
+      {
+        "product": "Smooth Peanut Butter",
+        "status": "UNSAFE",
+        "because": "Peanut"
+      },
+      {
+        "product": "Dark Chocolate 70%",
+        "status": "CAUTION",
+        "because": "Tree nuts"
+      },
+      {
+        "product": "Nut-Free Granola Bar",
+        "status": "CAUTION",
+        "because": "Tree nuts"
+      }
+    ],
+    "note": "Liam avoids peanut and tree nuts; isSubtypeOf lets 'tree nuts' match almond, hazelnut and pine nut.",
+    "question": "Which products are unsafe, or need caution, for Liam (peanut and tree nut allergy)?",
+    "kind": "personalised reasoning",
+    "sparql": "SELECT ?product ?status WHERE { { ?product falcon:unsafeFor falcon:cons_liam . BIND(\"UNSAFE\" AS ?status) } UNION { ?product falcon:cautionFor falcon:cons_liam . FILTER NOT EXISTS { ?product falcon:unsafeFor falcon:cons_liam } BIND(\"CAUTION\" AS ?status) } }"
+  },
+  "CQ06": {
+    "columns": [
+      "product"
+    ],
+    "rows": [
+      {
+        "product": "Aged Hard Cheese"
+      },
+      {
+        "product": "Baking Powder"
+      },
+      {
+        "product": "Roasted Butternut Soup"
+      },
+      {
+        "product": "Classic Caesar Dressing"
+      },
+      {
+        "product": "Celery Salt"
+      },
+      {
+        "product": "Classic Mayonnaise"
+      },
+      {
+        "product": "Coconut Drink"
+      },
+      {
+        "product": "Creamy Coleslaw"
+      },
+      {
+        "product": "Cooking Spray"
+      },
+      {
+        "product": "Crispy Malt Flakes"
+      },
+      {
+        "product": "Dijon Mustard"
+      },
+      {
+        "product": "Dried Apricots"
+      },
+      {
+        "product": "Eggplant Parmigiana"
+      },
+      {
+        "product": "Fruit Gummies"
+      },
+      {
+        "product": "Gluten-Free White Loaf"
+      },
+      {
+        "product": "Gluten-Free Sesame Crackers"
+      },
+      {
+        "product": "Pure Ghee"
+      },
+      {
+        "product": "Green Curry Paste"
+      },
+      {
+        "product": "Imitation Crab Sticks"
+      },
+      {
+        "product": "Lactose-Free Milk"
+      },
+      {
+        "product": "High-Protein Lupin Pasta"
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener"
+      },
+      {
+        "product": "Oat Barista Drink"
+      },
+      {
+        "product": "Plant Protein Bar"
+      },
+      {
+        "product": "Rye Sourdough"
+      },
+      {
+        "product": "Seafood Paella Kit"
+      },
+      {
+        "product": "Classic Hummus"
+      },
+      {
+        "product": "Brewed Soy Sauce"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce"
+      },
+      {
+        "product": "Tamari"
+      },
+      {
+        "product": "Vegan Berry Gummies"
+      },
+      {
+        "product": "Vitamin D Gummies"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits"
+      },
+      {
+        "product": "Fruit Drops"
+      }
+    ],
+    "why_not": {
+      "Dark Chocolate 70%": [
+        "[E13] Confirmed safe for consumer: blocked because cautionFor(prod_dark_chocolate, cons_liam) holds:\n      cautionFor(prod_dark_chocolate, cons_liam)   [R08: Caution for consumer]\n      |-- Consumer(cons_liam)   [asserted fact]\n      |-- mustAvoid(cons_liam, alg_tree_nuts)   [asserted fact]\n      `-- mayContain(prod_dark_chocolate, alg_tree_nuts)   [T-CH-4: mayContain ∘ isSubtypeOf ⊑ mayContain]\n          |-- mayContain(prod_dark_chocolate, alg_hazelnut)   [asserted fact]\n          `-- isSubtypeOf(alg_hazelnut, alg_tree_nuts)   [asserted fact]"
+      ],
+      "Rice Puffs (record incomplete)": [
+        "[E13] Confirmed safe for consumer: no evidence for hasIngredientListStatus(prod_rice_puffs_incomplete, complete)"
+      ]
+    },
+    "note": "Only possible with negation as failure; OWL alone can never conclude that a product is safe.",
+    "question": "Which products can be confirmed safe for Liam, and why are others excluded?",
+    "kind": "negation as failure",
+    "sparql": "SELECT ?product WHERE { ?product a falcon:Product ; falcon:hasIngredientListStatus \"complete\" . FILTER NOT EXISTS { ?product falcon:unsafeFor falcon:cons_liam } FILTER NOT EXISTS { ?product falcon:cautionFor falcon:cons_liam } FILTER NOT EXISTS { ?product falcon:hasIngredient ?i . ?i falcon:possiblyTriggers ?a . falcon:cons_liam falcon:mustAvoid ?a } }"
+  },
+  "CQ07": {
+    "columns": [
+      "product",
+      "inferred classes"
+    ],
+    "rows": [
+      {
+        "product": "Hazelnut Cocoa Spread",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, MultiMarketProduct, ContainsMilkProduct, ContainsTreeNutsProduct, ContainsSoyProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Oat Barista Drink",
+        "inferred classes": "GlutenContainingProduct, AllergenContainingProduct, MultiMarketProduct, ContainsGlutenCerealsProduct, ContainsGlutenProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Classic Caesar Dressing",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, AllergenContainingProduct, MultiMarketProduct, ContainsMilkProduct, ContainsEggProduct, ContainsFishProduct"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsFishProduct"
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "inferred classes": "NonVeganProduct, OriginUncertainProduct, AllergenContainingProduct, ContainsMilkProduct"
+      },
+      {
+        "product": "Lactose-Free Milk",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, MultiMarketProduct, ContainsMilkProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Gluten-Free Sesame Crackers",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, MeetsGlutenFreeThreshold, ContainsSesameProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Gluten-Free White Loaf",
+        "inferred classes": "AllergenContainingProduct, MeetsGlutenFreeThreshold, ContainsGlutenCerealsProduct, ContainsWheatProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Rye Sourdough",
+        "inferred classes": "GlutenContainingProduct, AllergenContainingProduct, MultiMarketProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Crispy Malt Flakes",
+        "inferred classes": "GlutenContainingProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsGlutenCerealsProduct, ContainsGlutenProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, PrecautionaryLabelledProduct, MultiMarketProduct, ContainsMilkProduct, ContainsPeanutProduct, ContainsSoyProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Nut-Free Granola Bar",
+        "inferred classes": "GlutenContainingProduct, AllergenContainingProduct, PrecautionaryLabelledProduct, PrecautionaryConflictProduct, MultiMarketProduct, ContainsGlutenCerealsProduct, ContainsGlutenProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Almond Butter Cookies",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, PrecautionaryLabelledProduct, MultiMarketProduct, MeetsGlutenFreeThreshold, ContainsMilkProduct, ContainsEggProduct, ContainsTreeNutsProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Fruit Gummies",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, OriginUncertainProduct, ClaimConflictProduct, MultiMarketProduct"
+      },
+      {
+        "product": "Vegan Berry Gummies",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, ClaimConflictProduct, MultiMarketProduct"
+      },
+      {
+        "product": "Honey Oat Bar",
+        "inferred classes": "NonVeganProduct, GlutenContainingProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsTreeNutsProduct, ContainsGlutenCerealsProduct, ContainsGlutenProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Plant Protein Bar",
+        "inferred classes": "OriginUncertainProduct, MultiMarketProduct"
+      },
+      {
+        "product": "Classic Hummus",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, ContainsSesameProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Celery Salt",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, ContainsCeleryProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Dijon Mustard",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, SulphiteAtOrAbove10ppm, SulphiteAbove10ppm, ContainsMustardProduct, ContainsSulphitesProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Dried Apricots",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, SulphiteAtOrAbove10ppm, ContainsSulphitesProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "High-Protein Lupin Pasta",
+        "inferred classes": "GlutenContainingProduct, AllergenContainingProduct, MultiMarketProduct, ContainsLupinProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Seafood Paella Kit",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, AllergenContainingProduct, MultiMarketProduct, ContainsCrustaceanProduct, ContainsMolluscProduct"
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, GlutenContainingProduct, AllergenContainingProduct, MultiMarketProduct, ContainsEggProduct, ContainsFishProduct, ContainsCrustaceanProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct"
+      },
+      {
+        "product": "Dark Chocolate 70%",
+        "inferred classes": "AllergenContainingProduct, PrecautionaryLabelledProduct, PrecautionaryConflictProduct, MultiMarketProduct, ContainsSoyProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Coconut Drink",
+        "inferred classes": "MultiMarketProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, GlutenContainingProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsMilkProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct"
+      },
+      {
+        "product": "Baking Powder",
+        "inferred classes": "MultiMarketProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Smooth Peanut Butter",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, ContainsPeanutProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Pure Ghee",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, MultiMarketProduct, ContainsMilkProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, MultiMarketProduct, ContainsMilkProduct, ContainsCeleryProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Classic Trail Mix",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, ContainsTreeNutsProduct, ContainsPeanutProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Pesto Genovese",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsMilkProduct, ContainsTreeNutsProduct"
+      },
+      {
+        "product": "Green Curry Paste",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsCrustaceanProduct"
+      },
+      {
+        "product": "Vitamin D Gummies",
+        "inferred classes": "NonVeganProduct, NonVegetarianProduct, OriginUncertainProduct"
+      },
+      {
+        "product": "Rice Puffs (record incomplete)",
+        "inferred classes": "IncompleteRecordProduct"
+      },
+      {
+        "product": "Mystery Snack (no ingredient data)",
+        "inferred classes": "MultiMarketProduct, IncompleteRecordProduct"
+      },
+      {
+        "product": "Brewed Soy Sauce",
+        "inferred classes": "GlutenContainingProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsSoyProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Tamari",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, MeetsGlutenFreeThreshold, ContainsSoyProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Cooking Spray",
+        "inferred classes": "AllergenContainingProduct, MultiMarketProduct, ContainsSoyProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Fruit Drops",
+        "inferred classes": "AllergenContainingProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, VerifiedVeganProduct*, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Aged Hard Cheese",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, MultiMarketProduct, ContainsMilkProduct, ContainsEggProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, MultiMarketProduct, ContainsEggProduct, ContainsMustardProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "inferred classes": "NonVeganProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsEggProduct, ContainsMustardProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "inferred classes": "OriginUncertainProduct, GlutenContainingProduct, AllergenContainingProduct, MultiMarketProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct"
+      }
+    ],
+    "note": "* = closed-world class computed by the engine; all others are OWL defined classes.",
+    "question": "How is each product classified automatically?",
+    "kind": "classification",
+    "sparql": "SELECT ?product ?class WHERE { ?product a falcon:Product . ?product a ?class . ?class rdfs:subClassOf* falcon:Product . FILTER(?class != falcon:Product) }"
+  },
+  "CQ08": {
+    "columns": [
+      "product",
+      "allergen",
+      "US",
+      "Canada",
+      "EU",
+      "markets disagree"
+    ],
+    "rows": [
+      {
+        "product": "Hazelnut Cocoa Spread",
+        "allergen": "Hazelnut",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Hazelnut Cocoa Spread",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Hazelnut Cocoa Spread",
+        "allergen": "Soybean",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Oat Barista Drink",
+        "allergen": "Oats",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Caesar Dressing",
+        "allergen": "Egg",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Caesar Dressing",
+        "allergen": "Fish",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Caesar Dressing",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "allergen": "Fish",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Lactose-Free Milk",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Gluten-Free Sesame Crackers",
+        "allergen": "Sesame",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Gluten-Free White Loaf",
+        "allergen": "Wheat",
+        "US": "not sold",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Rye Sourdough",
+        "allergen": "Rye",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Rye Sourdough",
+        "allergen": "Wheat",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Crispy Malt Flakes",
+        "allergen": "Barley",
+        "US": "not required",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "allergen": "Peanut",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "allergen": "Soybean",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Nut-Free Granola Bar",
+        "allergen": "Oats",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Almond Butter Cookies",
+        "allergen": "Almond",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Almond Butter Cookies",
+        "allergen": "Egg",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Almond Butter Cookies",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Honey Oat Bar",
+        "allergen": "Almond",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Honey Oat Bar",
+        "allergen": "Oats",
+        "US": "not required",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Classic Hummus",
+        "allergen": "Sesame",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Celery Salt",
+        "allergen": "Celery",
+        "US": "not required",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Dijon Mustard",
+        "allergen": "Mustard",
+        "US": "not required",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Dijon Mustard",
+        "allergen": "Sulphur dioxide and sulphites",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Dried Apricots",
+        "allergen": "Sulphur dioxide and sulphites",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not required",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "High-Protein Lupin Pasta",
+        "allergen": "Lupin",
+        "US": "not required",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "High-Protein Lupin Pasta",
+        "allergen": "Wheat",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Seafood Paella Kit",
+        "allergen": "Crustacean shellfish",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Seafood Paella Kit",
+        "allergen": "Molluscs",
+        "US": "not required",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "allergen": "Crustacean shellfish",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "allergen": "Egg",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "allergen": "Fish",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "allergen": "Wheat",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Dark Chocolate 70%",
+        "allergen": "Soybean",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "allergen": "Wheat",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Smooth Peanut Butter",
+        "allergen": "Peanut",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Pure Ghee",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "allergen": "Celery",
+        "US": "not sold",
+        "Canada": "not required",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "allergen": "Milk",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Trail Mix",
+        "allergen": "Almond",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Trail Mix",
+        "allergen": "Cashew",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Trail Mix",
+        "allergen": "Peanut",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Pesto Genovese",
+        "allergen": "Cashew",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Pesto Genovese",
+        "allergen": "Milk",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Pesto Genovese",
+        "allergen": "Pine nut",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not required",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Green Curry Paste",
+        "allergen": "Crustacean shellfish",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Brewed Soy Sauce",
+        "allergen": "Soybean",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Brewed Soy Sauce",
+        "allergen": "Wheat",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Tamari",
+        "allergen": "Soybean",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Cooking Spray",
+        "allergen": "Soybean",
+        "US": "must declare",
+        "Canada": "not sold",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Aged Hard Cheese",
+        "allergen": "Egg",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Aged Hard Cheese",
+        "allergen": "Milk",
+        "US": "not sold",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "allergen": "Egg",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": ""
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "allergen": "Mustard",
+        "US": "not required",
+        "Canada": "must declare",
+        "EU": "must declare",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Egg",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Mustard",
+        "US": "not required",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": "yes"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "allergen": "Wheat",
+        "US": "must declare",
+        "Canada": "must declare",
+        "EU": "not sold",
+        "markets disagree": ""
+      }
+    ],
+    "note": "11 product-allergen pairs are treated differently by markets the product is sold in.",
+    "question": "Which allergens must each product declare in the US, Canada and the EU, and where do the markets disagree?",
+    "kind": "jurisdiction-aware reasoning",
+    "sparql": "SELECT ?product ?allergen ?market WHERE { { ?product falcon:mustDeclareInUS ?allergen . BIND(\"US\" AS ?market) } UNION { ?product falcon:mustDeclareInCanada ?allergen . BIND(\"Canada\" AS ?market) } UNION { ?product falcon:mustDeclareInEU ?allergen . BIND(\"EU\" AS ?market) } }"
+  },
+  "CQ09": {
+    "columns": [
+      "product",
+      "allergen",
+      "ingredient on label",
+      "derivation"
+    ],
+    "rows": [
+      {
+        "product": "Aged Hard Cheese",
+        "allergen": "Egg",
+        "ingredient on label": "Lysozyme (E1105)",
+        "derivation": "Lysozyme (E1105) -> Egg white -> Egg  =>  Egg allergen"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Egg",
+        "ingredient on label": "Mayonnaise",
+        "derivation": "Mayonnaise -> Egg yolk -> Egg  =>  Egg allergen"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Mustard",
+        "ingredient on label": "Mayonnaise",
+        "derivation": "Mayonnaise -> Mustard seed  =>  Mustard allergen"
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "allergen": "Wheat",
+        "ingredient on label": "Breadcrumbs",
+        "derivation": "Breadcrumbs -> Wheat flour -> Wheat  =>  Wheat allergen"
+      },
+      {
+        "product": "Imitation Crab Sticks",
+        "allergen": "Fish",
+        "ingredient on label": "Surimi",
+        "derivation": "Surimi -> Fish  =>  Fish allergen"
+      },
+      {
+        "product": "High-Protein Lupin Pasta",
+        "allergen": "Wheat",
+        "ingredient on label": "Semolina",
+        "derivation": "Semolina -> Wheat  =>  Wheat allergen"
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "allergen": "Milk",
+        "ingredient on label": "Sodium caseinate",
+        "derivation": "Sodium caseinate -> Casein -> Milk  =>  Milk allergen"
+      },
+      {
+        "product": "Peanut Butter Cups",
+        "allergen": "Soybean",
+        "ingredient on label": "Milk chocolate",
+        "derivation": "Milk chocolate -> Soy lecithin (E322) -> Soybeans  =>  Soybean allergen"
+      },
+      {
+        "product": "Classic Hummus",
+        "allergen": "Sesame",
+        "ingredient on label": "Tahini",
+        "derivation": "Tahini -> Sesame seeds  =>  Sesame allergen"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "allergen": "Fish",
+        "ingredient on label": "Worcestershire sauce",
+        "derivation": "Worcestershire sauce -> Anchovy  =>  Fish allergen"
+      }
+    ],
+    "question": "Which products contain an allergen that the ingredient names do not reveal?",
+    "kind": "hidden-allergen reasoning",
+    "sparql": "SELECT ?product ?allergen ?ingredient WHERE { ?product falcon:hasIngredient ?ingredient . ?ingredient falcon:triggersAllergen ?allergen . FILTER NOT EXISTS { GRAPH <http://www.semanticweb.org/anushgoel/ontologies/2026/falcon.owl> { ?ingredient falcon:triggersAllergen ?allergen } } }"
+  },
+  "CQ10": {
+    "columns": [
+      "product",
+      "ingredients known",
+      "consumers confirmed safe",
+      "claims"
+    ],
+    "rows": [
+      {
+        "product": "Mystery Snack (no ingredient data)",
+        "ingredients known": 0,
+        "consumers confirmed safe": "0 of 9",
+        "claims": "(none)"
+      },
+      {
+        "product": "Rice Puffs (record incomplete)",
+        "ingredients known": 2,
+        "consumers confirmed safe": "0 of 9",
+        "claims": "Nut-free -> UNVERIFIABLE"
+      }
+    ],
+    "question": "Which products cannot be assessed because their ingredient information is incomplete?",
+    "kind": "incomplete information",
+    "sparql": "SELECT ?product WHERE { ?product a falcon:IncompleteRecordProduct . }"
+  },
+  "CQ11": {
+    "columns": [
+      "product",
+      "gluten (ppm)",
+      "lab result",
+      "gluten sources in recipe",
+      "verdict",
+      "contains wheat"
+    ],
+    "rows": [
+      {
+        "product": "Almond Butter Cookies",
+        "gluten (ppm)": 8.0,
+        "lab result": "meets limit",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Baking Powder",
+        "gluten (ppm)": "",
+        "lab result": "untested",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "gluten (ppm)": "",
+        "lab result": "untested",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "gluten (ppm)": "",
+        "lab result": "untested",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Crispy Malt Flakes",
+        "gluten (ppm)": 45.0,
+        "lab result": "exceeds limit",
+        "gluten sources in recipe": "Barley malt extract",
+        "verdict": "CONTRADICTED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Gluten-Free White Loaf",
+        "gluten (ppm)": 12.0,
+        "lab result": "meets limit",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": "yes"
+      },
+      {
+        "product": "Gluten-Free Sesame Crackers",
+        "gluten (ppm)": 5.0,
+        "lab result": "meets limit",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Classic Hummus",
+        "gluten (ppm)": "",
+        "lab result": "untested",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      },
+      {
+        "product": "Brewed Soy Sauce",
+        "gluten (ppm)": "",
+        "lab result": "untested",
+        "gluten sources in recipe": "Wheat",
+        "verdict": "CONTRADICTED",
+        "contains wheat": "yes"
+      },
+      {
+        "product": "Tamari",
+        "gluten (ppm)": 3.0,
+        "lab result": "meets limit",
+        "gluten sources in recipe": "none",
+        "verdict": "VERIFIED",
+        "contains wheat": ""
+      }
+    ],
+    "note": "Gluten-free and wheat-free are different claims: see the Codex wheat starch loaf.",
+    "question": "Which gluten-free products meet the 20 ppm limit, which exceed it, and which rely on the recipe alone?",
+    "kind": "numeric reasoning",
+    "sparql": "SELECT ?product ?ppm ?status WHERE { ?product falcon:hasLabelClaim ?claim . ?claim a falcon:GlutenFreeClaim . OPTIONAL { ?product falcon:hasGlutenPPM ?ppm } BIND(IF(!BOUND(?ppm), \"UNTESTED\", IF(?ppm < 20, \"MEETS\", \"EXCEEDS\")) AS ?status) }"
+  },
+  "CQ12": {
+    "columns": [
+      "aspect",
+      "result"
+    ],
+    "rows": [
+      {
+        "aspect": "ingredients",
+        "result": "Sesame seeds, Honey, Glucose syrup, Wheat flour"
+      },
+      {
+        "aspect": "inferred classes",
+        "result": "NonVeganProduct, GlutenContainingProduct, AllergenContainingProduct, ClaimConflictProduct, MultiMarketProduct, ContainsSesameProduct, ContainsGlutenCerealsProduct, ContainsWheatProduct, ContainsGlutenProduct, VerifiedVegetarianProduct*"
+      },
+      {
+        "aspect": "allergens",
+        "result": "Gluten (coeliac hazard), Cereals containing gluten, Sesame, Wheat"
+      },
+      {
+        "aspect": "claim audit",
+        "result": "Vegan -> CONTRADICTED"
+      },
+      {
+        "aspect": "undeclared allergens",
+        "result": "Wheat (Canada), Wheat (European Union)"
+      },
+      {
+        "aspect": "unsafe for",
+        "result": "Emma (vegetarian, sesame allergy), Sofia (coeliac disease), Wei (wheat allergy, not coeliac)"
+      },
+      {
+        "aspect": "unsuitable for diet of",
+        "result": "Arjun (vegan)"
+      }
+    ],
+    "new_product": {
+      "id": "prod_sesame_honey_snaps",
+      "label": "Sesame Honey Snaps (new, unseen product)",
+      "category": "cat_snacks",
+      "ingredients": [
+        "ing_sesame_seed",
+        "ing_honey",
+        "ing_glucose_syrup",
+        "ing_wheat_flour"
+      ],
+      "claims": [
+        "claim_vegan"
+      ],
+      "may_contain": [],
+      "declared": [
+        "alg_sesame"
+      ],
+      "sold_in": [
+        "jur_eu",
+        "jur_canada"
+      ],
+      "status": "complete",
+      "scenario": "Not part of the curated data; used to show classification of a new instance."
+    },
+    "question": "How is a new, previously unseen product classified?",
+    "kind": "classification of a new instance",
+    "sparql": null
+  },
+  "CQ13": {
+    "columns": [
+      "product",
+      "allergen",
+      "market",
+      "finding"
+    ],
+    "rows": [
+      {
+        "product": "Aged Hard Cheese",
+        "allergen": "Egg",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Aged Hard Cheese",
+        "allergen": "Egg",
+        "market": "European Union",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "allergen": "Celery",
+        "market": "European Union",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Celery Salt",
+        "allergen": "Celery",
+        "market": "European Union",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "allergen": "Mustard",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "allergen": "Mustard",
+        "market": "European Union",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Egg",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Egg",
+        "market": "United States",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "allergen": "Mustard",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Crispy Malt Flakes",
+        "allergen": "Barley",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Dried Apricots",
+        "allergen": "Sulphur dioxide and sulphites",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Dried Apricots",
+        "allergen": "Sulphur dioxide and sulphites",
+        "market": "United States",
+        "finding": "undeclared"
+      },
+      {
+        "product": "High-Protein Lupin Pasta",
+        "allergen": "Lupin",
+        "market": "European Union",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Pesto Genovese",
+        "allergen": "Pine nut",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Pesto Genovese",
+        "allergen": "Pine nut",
+        "market": "United States",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "allergen": "Fish",
+        "market": "Canada",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "allergen": "Fish",
+        "market": "United States",
+        "finding": "undeclared"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "allergen": "Egg",
+        "market": "Canada",
+        "finding": "verify with supplier"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "allergen": "Egg",
+        "market": "United States",
+        "finding": "verify with supplier"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "allergen": "Soybean",
+        "market": "Canada",
+        "finding": "verify with supplier"
+      },
+      {
+        "product": "Cocoa Wafer Biscuits",
+        "allergen": "Soybean",
+        "market": "United States",
+        "finding": "verify with supplier"
+      }
+    ],
+    "note": "10 products carry at least one undeclared allergen in a market where they are sold.",
+    "question": "Which products have allergens that a market requires but the label does not declare?",
+    "kind": "compliance (recall risk)",
+    "sparql": "SELECT ?product ?allergen ?market WHERE { { ?product falcon:mustDeclareInUS ?allergen . BIND(\"US\" AS ?market) } UNION { ?product falcon:mustDeclareInCanada ?allergen . BIND(\"Canada\" AS ?market) } UNION { ?product falcon:mustDeclareInEU ?allergen . BIND(\"EU\" AS ?market) } FILTER NOT EXISTS { ?product falcon:declaresAllergen ?allergen } }"
+  },
+  "CQ14": {
+    "columns": [
+      "product",
+      "claim",
+      "status"
+    ],
+    "rows": [
+      {
+        "product": "Brewed Soy Sauce",
+        "claim": "Gluten-free",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Creamy Coleslaw",
+        "claim": "Egg-free",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Crispy Malt Flakes",
+        "claim": "Gluten-free",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Eggplant Parmigiana",
+        "claim": "Vegetarian",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Fruit Gummies",
+        "claim": "Vegetarian",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Green Curry Paste",
+        "claim": "Vegetarian",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Honey Oat Bar",
+        "claim": "Vegan",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Pesto Genovese",
+        "claim": "Vegetarian",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Smoky Steakhouse Sauce",
+        "claim": "Vegan",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Vegan Berry Gummies",
+        "claim": "Vegan",
+        "status": "CONTRADICTED"
+      },
+      {
+        "product": "Dark Chocolate 70%",
+        "claim": "Dairy-free",
+        "status": "AT RISK"
+      },
+      {
+        "product": "Nut-Free Granola Bar",
+        "claim": "Nut-free",
+        "status": "AT RISK"
+      },
+      {
+        "product": "Plant Protein Bar",
+        "claim": "Vegan",
+        "status": "UNVERIFIABLE"
+      },
+      {
+        "product": "Rice Puffs (record incomplete)",
+        "claim": "Nut-free",
+        "status": "UNVERIFIABLE"
+      },
+      {
+        "product": "Non-Dairy Coffee Whitener",
+        "claim": "Non-dairy (US term)",
+        "status": "INFORMATIONAL"
+      },
+      {
+        "product": "Aged Hard Cheese",
+        "claim": "Vegetarian",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Almond Butter Cookies",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Baking Powder",
+        "claim": "Dairy-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Baking Powder",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Baking Powder",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Celery Salt",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Classic Hummus",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Classic Hummus",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "claim": "Dairy-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Classic Mayonnaise",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Classic Trail Mix",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Coconut Drink",
+        "claim": "Dairy-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Coconut Drink",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Cooking Spray",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Dark Chocolate 70%",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Dijon Mustard",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Dried Apricots",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Fruit Drops",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Gluten-Free Sesame Crackers",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Gluten-Free Sesame Crackers",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Gluten-Free White Loaf",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Lactose-Free Milk",
+        "claim": "Lactose-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Nut-Free Granola Bar",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Oat Barista Drink",
+        "claim": "Dairy-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Oat Barista Drink",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Pure Ghee",
+        "claim": "Lactose-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Roasted Butternut Soup",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Smooth Peanut Butter",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Tamari",
+        "claim": "Gluten-free",
+        "status": "VERIFIED"
+      },
+      {
+        "product": "Tamari",
+        "claim": "Vegan",
+        "status": "VERIFIED"
+      }
+    ],
+    "counts": {
+      "VERIFIED": 30,
+      "CONTRADICTED": 10,
+      "AT RISK": 2,
+      "INFORMATIONAL": 1,
+      "UNVERIFIABLE": 2
+    },
+    "question": "Which label claims are verified, contradicted, at risk or unverifiable?",
+    "kind": "three-valued claim audit",
+    "sparql": "SELECT ?product ?claim WHERE { ?product falcon:hasLabelClaim ?claim . FILTER NOT EXISTS { ?product falcon:contradictsClaim ?claim } }"
+  }
+}

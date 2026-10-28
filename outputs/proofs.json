@@ -1,0 +1,622 @@
+{
+  "proofs": [
+    {
+      "goal": "containsAllergen(prod_steakhouse_sauce, alg_fish)",
+      "title": "Hidden fish two steps down a compound ingredient",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 6.62,
+      "proof_size": 6,
+      "proof_depth": 3,
+      "rules_used": [
+        "R01",
+        "T-CH-2"
+      ],
+      "backward_proof": {
+        "statement": "containsAllergen(prod_steakhouse_sauce, alg_fish)",
+        "how": "R01",
+        "rule_name": "Product allergen detection",
+        "note": "",
+        "children": [
+          {
+            "statement": "Product(prod_steakhouse_sauce)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "triggersAllergen(ing_worcestershire_sauce, alg_fish)",
+            "how": "T-CH-2",
+            "rule_name": "hasComponent ∘ triggersAllergen ⊑ triggersAllergen",
+            "note": "",
+            "children": [
+              {
+                "statement": "hasComponent(ing_worcestershire_sauce, ing_anchovy)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "triggersAllergen(ing_anchovy, alg_fish)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "goal": "contradictsClaim(prod_steakhouse_sauce, claim_vegan)",
+      "title": "Why the vegan claim on the steakhouse sauce is false",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 1.4,
+      "proof_size": 10,
+      "proof_depth": 5,
+      "rules_used": [
+        "R03",
+        "T-DEF-NonVeganIngredient-2",
+        "T-DEF-NonVeganProduct-1",
+        "T-SC-FishIngredient-AnimalDerivedIngredient"
+      ],
+      "backward_proof": {
+        "statement": "contradictsClaim(prod_steakhouse_sauce, claim_vegan)",
+        "how": "R03",
+        "rule_name": "Vegan claim contradiction",
+        "note": "",
+        "children": [
+          {
+            "statement": "hasLabelClaim(prod_steakhouse_sauce, claim_vegan)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "VeganClaim(claim_vegan)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "NonVeganProduct(prod_steakhouse_sauce)",
+            "how": "T-DEF-NonVeganProduct-1",
+            "rule_name": "Definition of NonVeganProduct (case 1)",
+            "note": "",
+            "children": [
+              {
+                "statement": "Product(prod_steakhouse_sauce)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "NonVeganIngredient(ing_worcestershire_sauce)",
+                "how": "T-DEF-NonVeganIngredient-2",
+                "rule_name": "Definition of NonVeganIngredient (case 2)",
+                "note": "",
+                "children": [
+                  {
+                    "statement": "hasComponent(ing_worcestershire_sauce, ing_anchovy)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  },
+                  {
+                    "statement": "AnimalDerivedIngredient(ing_anchovy)",
+                    "how": "T-SC-FishIngredient-AnimalDerivedIngredient",
+                    "rule_name": "FishIngredient ⊑ AnimalDerivedIngredient",
+                    "note": "",
+                    "children": [
+                      {
+                        "statement": "FishIngredient(ing_anchovy)",
+                        "how": "FACT",
+                        "rule_name": "",
+                        "note": "",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "goal": "undeclaredAllergen(prod_pesto_genovese, alg_pine_nut, jur_us)",
+      "title": "Pine nut must be declared in the US (not in the EU)",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 0.18,
+      "proof_size": 10,
+      "proof_depth": 4,
+      "rules_used": [
+        "E01",
+        "E04",
+        "E08"
+      ],
+      "backward_proof": {
+        "statement": "undeclaredAllergen(prod_pesto_genovese, alg_pine_nut, jur_us)",
+        "how": "E08",
+        "rule_name": "Undeclared allergen",
+        "note": "",
+        "children": [
+          {
+            "statement": "declarationDuty(prod_pesto_genovese, alg_pine_nut, jur_us)",
+            "how": "E04",
+            "rule_name": "Declaration duty unless exempt",
+            "note": "",
+            "children": [
+              {
+                "statement": "containsVia(prod_pesto_genovese, alg_pine_nut, ing_pine_nut)",
+                "how": "E01",
+                "rule_name": "Allergen with its source ingredient",
+                "note": "",
+                "children": [
+                  {
+                    "statement": "Product(prod_pesto_genovese)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  },
+                  {
+                    "statement": "hasIngredient(prod_pesto_genovese, ing_pine_nut)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  },
+                  {
+                    "statement": "triggersAllergen(ing_pine_nut, alg_pine_nut)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "statement": "soldIn(prod_pesto_genovese, jur_us)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "requiresDeclarationOf(jur_us, alg_pine_nut)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "not exemptFromDeclaration(ing_pine_nut, alg_pine_nut, jur_us)",
+                "how": "NAF",
+                "rule_name": "",
+                "note": "no proof of exemptFromDeclaration(ing_pine_nut, alg_pine_nut, jur_us)",
+                "children": []
+              }
+            ]
+          },
+          {
+            "statement": "not declaresAllergen(prod_pesto_genovese, alg_pine_nut)",
+            "how": "NAF",
+            "rule_name": "",
+            "note": "no proof of declaresAllergen(prod_pesto_genovese, alg_pine_nut)",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "goal": "unsafeFor(prod_gf_bread_codex, cons_wei)",
+      "title": "A valid gluten-free loaf that is unsafe for a wheat allergy",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 4.59,
+      "proof_size": 9,
+      "proof_depth": 4,
+      "rules_used": [
+        "R01",
+        "R07",
+        "T-CH-1"
+      ],
+      "backward_proof": {
+        "statement": "unsafeFor(prod_gf_bread_codex, cons_wei)",
+        "how": "R07",
+        "rule_name": "Unsafe for consumer",
+        "note": "",
+        "children": [
+          {
+            "statement": "Consumer(cons_wei)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "mustAvoid(cons_wei, alg_wheat)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "containsAllergen(prod_gf_bread_codex, alg_wheat)",
+            "how": "R01",
+            "rule_name": "Product allergen detection",
+            "note": "",
+            "children": [
+              {
+                "statement": "Product(prod_gf_bread_codex)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "hasIngredient(prod_gf_bread_codex, ing_codex_wheat_starch)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "triggersAllergen(ing_codex_wheat_starch, alg_wheat)",
+                "how": "T-CH-1",
+                "rule_name": "retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen",
+                "note": "",
+                "children": [
+                  {
+                    "statement": "retainsAllergensOf(ing_codex_wheat_starch, ing_wheat)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  },
+                  {
+                    "statement": "triggersAllergen(ing_wheat, alg_wheat)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "goal": "containsAllergen(prod_cooking_spray, alg_soy)",
+      "title": "Soy comes from the lecithin, not the exempt refined oil",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 1.75,
+      "proof_size": 6,
+      "proof_depth": 3,
+      "rules_used": [
+        "R01",
+        "T-CH-1"
+      ],
+      "backward_proof": {
+        "statement": "containsAllergen(prod_cooking_spray, alg_soy)",
+        "how": "R01",
+        "rule_name": "Product allergen detection",
+        "note": "",
+        "children": [
+          {
+            "statement": "Product(prod_cooking_spray)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "hasIngredient(prod_cooking_spray, ing_soy_lecithin)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "triggersAllergen(ing_soy_lecithin, alg_soy)",
+            "how": "T-CH-1",
+            "rule_name": "retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen",
+            "note": "",
+            "children": [
+              {
+                "statement": "retainsAllergensOf(ing_soy_lecithin, ing_soybean)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "triggersAllergen(ing_soybean, alg_soy)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "goal": "hiddenAllergenVia(prod_aged_cheese_lysozyme, alg_egg, ing_lysozyme)",
+      "title": "Egg hidden in a cheese preservative",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 0.21,
+      "proof_size": 10,
+      "proof_depth": 4,
+      "rules_used": [
+        "E10",
+        "T-CH-1"
+      ],
+      "backward_proof": {
+        "statement": "hiddenAllergenVia(prod_aged_cheese_lysozyme, alg_egg, ing_lysozyme)",
+        "how": "E10",
+        "rule_name": "Hidden allergen",
+        "note": "",
+        "children": [
+          {
+            "statement": "Product(prod_aged_cheese_lysozyme)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "hasIngredient(prod_aged_cheese_lysozyme, ing_lysozyme)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "triggersAllergen(ing_lysozyme, alg_egg)",
+            "how": "T-CH-1",
+            "rule_name": "retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen",
+            "note": "",
+            "children": [
+              {
+                "statement": "retainsAllergensOf(ing_lysozyme, ing_egg_white)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              },
+              {
+                "statement": "triggersAllergen(ing_egg_white, alg_egg)",
+                "how": "T-CH-1",
+                "rule_name": "retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen",
+                "note": "",
+                "children": [
+                  {
+                    "statement": "retainsAllergensOf(ing_egg_white, ing_egg)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  },
+                  {
+                    "statement": "triggersAllergen(ing_egg, alg_egg)",
+                    "how": "FACT",
+                    "rule_name": "",
+                    "note": "",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "statement": "not assertedTrigger(ing_lysozyme, alg_egg)",
+            "how": "NAF",
+            "rule_name": "",
+            "note": "no proof of assertedTrigger(ing_lysozyme, alg_egg)",
+            "children": []
+          },
+          {
+            "statement": "not mentionsAllergen(ing_lysozyme, alg_egg)",
+            "how": "NAF",
+            "rule_name": "",
+            "note": "no proof of mentionsAllergen(ing_lysozyme, alg_egg)",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "goal": "confirmedSafeFor(prod_tamari, cons_liam)",
+      "title": "A positive safety verdict needs negation as failure",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 10.4,
+      "proof_size": 9,
+      "proof_depth": 3,
+      "rules_used": [
+        "E11",
+        "E13"
+      ],
+      "backward_proof": {
+        "statement": "confirmedSafeFor(prod_tamari, cons_liam)",
+        "how": "E13",
+        "rule_name": "Confirmed safe for consumer",
+        "note": "",
+        "children": [
+          {
+            "statement": "Consumer(cons_liam)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "Product(prod_tamari)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "hasIngredientListStatus(prod_tamari, complete)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "hasSomeIngredient(prod_tamari)",
+            "how": "E11",
+            "rule_name": "Has some ingredient",
+            "note": "",
+            "children": [
+              {
+                "statement": "hasIngredient(prod_tamari, ing_soybean)",
+                "how": "FACT",
+                "rule_name": "",
+                "note": "",
+                "children": []
+              }
+            ]
+          },
+          {
+            "statement": "not unsafeFor(prod_tamari, cons_liam)",
+            "how": "NAF",
+            "rule_name": "",
+            "note": "no proof of unsafeFor(prod_tamari, cons_liam)",
+            "children": []
+          },
+          {
+            "statement": "not cautionFor(prod_tamari, cons_liam)",
+            "how": "NAF",
+            "rule_name": "",
+            "note": "no proof of cautionFor(prod_tamari, cons_liam)",
+            "children": []
+          },
+          {
+            "statement": "not uncertainFor(prod_tamari, cons_liam)",
+            "how": "NAF",
+            "rule_name": "",
+            "note": "no proof of uncertainFor(prod_tamari, cons_liam)",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "goal": "declarationDuty(prod_dried_apricots, alg_sulphites, jur_canada)",
+      "title": "Numeric threshold at exactly 10 ppm",
+      "holds_forward": true,
+      "holds_backward": true,
+      "backward_ms": 1.86,
+      "proof_size": 6,
+      "proof_depth": 2,
+      "rules_used": [
+        "E06"
+      ],
+      "backward_proof": {
+        "statement": "declarationDuty(prod_dried_apricots, alg_sulphites, jur_canada)",
+        "how": "E06",
+        "rule_name": "Canada sulphite duty",
+        "note": "",
+        "children": [
+          {
+            "statement": "Product(prod_dried_apricots)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "soldIn(prod_dried_apricots, jur_canada)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "CanadaJurisdiction(jur_canada)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "hasSulphiteMgPerKg(prod_dried_apricots, 10.0)",
+            "how": "FACT",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          },
+          {
+            "statement": "greaterThanOrEqual(10.0, 10.0)",
+            "how": "BUILTIN",
+            "rule_name": "",
+            "note": "",
+            "children": []
+          }
+        ]
+      }
+    }
+  ],
+  "why_not": [
+    {
+      "goal": "confirmedSafeFor(prod_dark_chocolate, cons_maya)",
+      "reasons": [
+        "[E13] Confirmed safe for consumer: blocked because cautionFor(prod_dark_chocolate, cons_maya) holds:\n      cautionFor(prod_dark_chocolate, cons_maya)   [R08: Caution for consumer]\n      |-- Consumer(cons_maya)   [asserted fact]\n      |-- mustAvoid(cons_maya, alg_milk)   [asserted fact]\n      `-- mayContain(prod_dark_chocolate, alg_milk)   [asserted fact]"
+      ]
+    },
+    {
+      "goal": "VerifiedVeganProduct(prod_plant_protein_bar)",
+      "reasons": [
+        "[E21] Verified vegan product: blocked because hasNonVeganSafeIngredient(prod_plant_protein_bar) holds:\n      hasNonVeganSafeIngredient(prod_plant_protein_bar)   [E20: Product has a non-vegan-safe ingredient]\n      |-- hasIngredient(prod_plant_protein_bar, ing_mono_diglycerides)   [asserted fact]\n      `-- not VeganSafeIngredient(ing_mono_diglycerides)   [negation as failure]  (no proof of VeganSafeIngredient(ing_mono_diglycerides))"
+      ]
+    },
+    {
+      "goal": "declarationDuty(prod_wheat_glucose_candy, alg_wheat, jur_eu)",
+      "reasons": [
+        "[E04] Declaration duty unless exempt: blocked because exemptFromDeclaration(ing_wheat_glucose_syrup, alg_wheat, jur_eu) holds:\n      exemptFromDeclaration(ing_wheat_glucose_syrup, alg_wheat, jur_eu)   [asserted fact]"
+      ]
+    },
+    {
+      "goal": "declarationDuty(prod_dried_apricots, alg_sulphites, jur_eu)",
+      "reasons": [
+        "[E04] Declaration duty unless exempt: no evidence for requiresDeclarationOf(jur_eu, alg_sulphites)",
+        "[E05] US sulphite duty: no evidence for USJurisdiction(jur_eu)",
+        "[E06] Canada sulphite duty: no evidence for CanadaJurisdiction(jur_eu)",
+        "[E07] EU sulphite duty: test failed: 10.0 > 10.0 is false"
+      ]
+    }
+  ]
+}

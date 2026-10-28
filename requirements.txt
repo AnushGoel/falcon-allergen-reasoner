@@ -1,0 +1,6 @@
+# FALCON: reasoning pipeline + Streamlit app (Python 3.10 recommended)
+owlready2>=0.45
+streamlit>=1.32
+plotly>=5.18
+pandas>=1.5
+matplotlib>=3.7

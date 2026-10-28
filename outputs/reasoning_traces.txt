@@ -1,0 +1,226 @@
+==============================================================================
+Hidden fish two steps down a compound ingredient
+Goal: containsAllergen(prod_steakhouse_sauce, alg_fish)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+containsAllergen(prod_steakhouse_sauce, alg_fish)   [R01: Product allergen detection]
+|-- Product(prod_steakhouse_sauce)   [asserted fact]
+|-- hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)   [asserted fact]
+`-- triggersAllergen(ing_worcestershire_sauce, alg_fish)   [T-CH-2: hasComponent ∘ triggersAllergen ⊑ triggersAllergen]
+    |-- hasComponent(ing_worcestershire_sauce, ing_anchovy)   [asserted fact]
+    `-- triggersAllergen(ing_anchovy, alg_fish)   [asserted fact]
+
+Forward chaining (data-driven derivation):
+containsAllergen(prod_steakhouse_sauce, alg_fish)   [R01: Product allergen detection]
+|-- triggersAllergen(ing_worcestershire_sauce, alg_fish)   [T-CH-2: hasComponent ∘ triggersAllergen ⊑ triggersAllergen]
+|   |-- hasComponent(ing_worcestershire_sauce, ing_anchovy)   [asserted fact]
+|   `-- triggersAllergen(ing_anchovy, alg_fish)   [asserted fact]
+|-- Product(prod_steakhouse_sauce)   [asserted fact]
+`-- hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)   [asserted fact]
+
+==============================================================================
+Why the vegan claim on the steakhouse sauce is false
+Goal: contradictsClaim(prod_steakhouse_sauce, claim_vegan)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+contradictsClaim(prod_steakhouse_sauce, claim_vegan)   [R03: Vegan claim contradiction]
+|-- hasLabelClaim(prod_steakhouse_sauce, claim_vegan)   [asserted fact]
+|-- VeganClaim(claim_vegan)   [asserted fact]
+`-- NonVeganProduct(prod_steakhouse_sauce)   [T-DEF-NonVeganProduct-1: Definition of NonVeganProduct (case 1)]
+    |-- Product(prod_steakhouse_sauce)   [asserted fact]
+    |-- hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)   [asserted fact]
+    `-- NonVeganIngredient(ing_worcestershire_sauce)   [T-DEF-NonVeganIngredient-2: Definition of NonVeganIngredient (case 2)]
+        |-- hasComponent(ing_worcestershire_sauce, ing_anchovy)   [asserted fact]
+        `-- AnimalDerivedIngredient(ing_anchovy)   [T-SC-FishIngredient-AnimalDerivedIngredient: FishIngredient ⊑ AnimalDerivedIngredient]
+            `-- FishIngredient(ing_anchovy)   [asserted fact]
+
+Forward chaining (data-driven derivation):
+contradictsClaim(prod_steakhouse_sauce, claim_vegan)   [R03: Vegan claim contradiction]
+|-- NonVeganProduct(prod_steakhouse_sauce)   [T-DEF-NonVeganProduct-1: Definition of NonVeganProduct (case 1)]
+|   |-- NonVeganIngredient(ing_worcestershire_sauce)   [T-DEF-NonVeganIngredient-2: Definition of NonVeganIngredient (case 2)]
+|   |   |-- AnimalDerivedIngredient(ing_anchovy)   [T-SC-FishIngredient-AnimalDerivedIngredient: FishIngredient ⊑ AnimalDerivedIngredient]
+|   |   |   `-- FishIngredient(ing_anchovy)   [asserted fact]
+|   |   `-- hasComponent(ing_worcestershire_sauce, ing_anchovy)   [asserted fact]
+|   |-- Product(prod_steakhouse_sauce)   [asserted fact]
+|   `-- hasIngredient(prod_steakhouse_sauce, ing_worcestershire_sauce)   [asserted fact]
+|-- hasLabelClaim(prod_steakhouse_sauce, claim_vegan)   [asserted fact]
+`-- VeganClaim(claim_vegan)   [asserted fact]
+
+==============================================================================
+Pine nut must be declared in the US (not in the EU)
+Goal: undeclaredAllergen(prod_pesto_genovese, alg_pine_nut, jur_us)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+undeclaredAllergen(prod_pesto_genovese, alg_pine_nut, jur_us)   [E08: Undeclared allergen]
+|-- declarationDuty(prod_pesto_genovese, alg_pine_nut, jur_us)   [E04: Declaration duty unless exempt]
+|   |-- containsVia(prod_pesto_genovese, alg_pine_nut, ing_pine_nut)   [E01: Allergen with its source ingredient]
+|   |   |-- Product(prod_pesto_genovese)   [asserted fact]
+|   |   |-- hasIngredient(prod_pesto_genovese, ing_pine_nut)   [asserted fact]
+|   |   `-- triggersAllergen(ing_pine_nut, alg_pine_nut)   [asserted fact]
+|   |-- soldIn(prod_pesto_genovese, jur_us)   [asserted fact]
+|   |-- requiresDeclarationOf(jur_us, alg_pine_nut)   [asserted fact]
+|   `-- not exemptFromDeclaration(ing_pine_nut, alg_pine_nut, jur_us)   [negation as failure]  (no proof of exemptFromDeclaration(ing_pine_nut, alg_pine_nut, jur_us))
+`-- not declaresAllergen(prod_pesto_genovese, alg_pine_nut)   [negation as failure]  (no proof of declaresAllergen(prod_pesto_genovese, alg_pine_nut))
+
+Forward chaining (data-driven derivation):
+undeclaredAllergen(prod_pesto_genovese, alg_pine_nut, jur_us)   [E08: Undeclared allergen]
+|-- declarationDuty(prod_pesto_genovese, alg_pine_nut, jur_us)   [E04: Declaration duty unless exempt]
+|   |-- containsVia(prod_pesto_genovese, alg_pine_nut, ing_pine_nut)   [E01: Allergen with its source ingredient]
+|   |   |-- Product(prod_pesto_genovese)   [asserted fact]
+|   |   |-- hasIngredient(prod_pesto_genovese, ing_pine_nut)   [asserted fact]
+|   |   `-- triggersAllergen(ing_pine_nut, alg_pine_nut)   [asserted fact]
+|   |-- soldIn(prod_pesto_genovese, jur_us)   [asserted fact]
+|   |-- requiresDeclarationOf(jur_us, alg_pine_nut)   [asserted fact]
+|   `-- not exemptFromDeclaration(ing_pine_nut, alg_pine_nut, jur_us)   [negation as failure]  (not derivable)
+`-- not declaresAllergen(prod_pesto_genovese, alg_pine_nut)   [negation as failure]  (not derivable)
+
+==============================================================================
+A valid gluten-free loaf that is unsafe for a wheat allergy
+Goal: unsafeFor(prod_gf_bread_codex, cons_wei)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+unsafeFor(prod_gf_bread_codex, cons_wei)   [R07: Unsafe for consumer]
+|-- Consumer(cons_wei)   [asserted fact]
+|-- mustAvoid(cons_wei, alg_wheat)   [asserted fact]
+`-- containsAllergen(prod_gf_bread_codex, alg_wheat)   [R01: Product allergen detection]
+    |-- Product(prod_gf_bread_codex)   [asserted fact]
+    |-- hasIngredient(prod_gf_bread_codex, ing_codex_wheat_starch)   [asserted fact]
+    `-- triggersAllergen(ing_codex_wheat_starch, alg_wheat)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+        |-- retainsAllergensOf(ing_codex_wheat_starch, ing_wheat)   [asserted fact]
+        `-- triggersAllergen(ing_wheat, alg_wheat)   [asserted fact]
+
+Forward chaining (data-driven derivation):
+unsafeFor(prod_gf_bread_codex, cons_wei)   [R07: Unsafe for consumer]
+|-- containsAllergen(prod_gf_bread_codex, alg_wheat)   [R01: Product allergen detection]
+|   |-- triggersAllergen(ing_codex_wheat_starch, alg_wheat)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+|   |   |-- retainsAllergensOf(ing_codex_wheat_starch, ing_wheat)   [asserted fact]
+|   |   `-- triggersAllergen(ing_wheat, alg_wheat)   [asserted fact]
+|   |-- Product(prod_gf_bread_codex)   [asserted fact]
+|   `-- hasIngredient(prod_gf_bread_codex, ing_codex_wheat_starch)   [asserted fact]
+|-- Consumer(cons_wei)   [asserted fact]
+`-- mustAvoid(cons_wei, alg_wheat)   [asserted fact]
+
+==============================================================================
+Soy comes from the lecithin, not the exempt refined oil
+Goal: containsAllergen(prod_cooking_spray, alg_soy)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+containsAllergen(prod_cooking_spray, alg_soy)   [R01: Product allergen detection]
+|-- Product(prod_cooking_spray)   [asserted fact]
+|-- hasIngredient(prod_cooking_spray, ing_soy_lecithin)   [asserted fact]
+`-- triggersAllergen(ing_soy_lecithin, alg_soy)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+    |-- retainsAllergensOf(ing_soy_lecithin, ing_soybean)   [asserted fact]
+    `-- triggersAllergen(ing_soybean, alg_soy)   [asserted fact]
+
+Forward chaining (data-driven derivation):
+containsAllergen(prod_cooking_spray, alg_soy)   [R01: Product allergen detection]
+|-- triggersAllergen(ing_soy_lecithin, alg_soy)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+|   |-- retainsAllergensOf(ing_soy_lecithin, ing_soybean)   [asserted fact]
+|   `-- triggersAllergen(ing_soybean, alg_soy)   [asserted fact]
+|-- Product(prod_cooking_spray)   [asserted fact]
+`-- hasIngredient(prod_cooking_spray, ing_soy_lecithin)   [asserted fact]
+
+==============================================================================
+Egg hidden in a cheese preservative
+Goal: hiddenAllergenVia(prod_aged_cheese_lysozyme, alg_egg, ing_lysozyme)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+hiddenAllergenVia(prod_aged_cheese_lysozyme, alg_egg, ing_lysozyme)   [E10: Hidden allergen]
+|-- Product(prod_aged_cheese_lysozyme)   [asserted fact]
+|-- hasIngredient(prod_aged_cheese_lysozyme, ing_lysozyme)   [asserted fact]
+|-- triggersAllergen(ing_lysozyme, alg_egg)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+|   |-- retainsAllergensOf(ing_lysozyme, ing_egg_white)   [asserted fact]
+|   `-- triggersAllergen(ing_egg_white, alg_egg)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+|       |-- retainsAllergensOf(ing_egg_white, ing_egg)   [asserted fact]
+|       `-- triggersAllergen(ing_egg, alg_egg)   [asserted fact]
+|-- not assertedTrigger(ing_lysozyme, alg_egg)   [negation as failure]  (no proof of assertedTrigger(ing_lysozyme, alg_egg))
+`-- not mentionsAllergen(ing_lysozyme, alg_egg)   [negation as failure]  (no proof of mentionsAllergen(ing_lysozyme, alg_egg))
+
+Forward chaining (data-driven derivation):
+hiddenAllergenVia(prod_aged_cheese_lysozyme, alg_egg, ing_lysozyme)   [E10: Hidden allergen]
+|-- Product(prod_aged_cheese_lysozyme)   [asserted fact]
+|-- hasIngredient(prod_aged_cheese_lysozyme, ing_lysozyme)   [asserted fact]
+|-- triggersAllergen(ing_lysozyme, alg_egg)   [T-CH-1: retainsAllergensOf ∘ triggersAllergen ⊑ triggersAllergen]
+|   |-- retainsAllergensOf(ing_lysozyme, ing_egg)   [T-TR-retainsAllergensOf: retainsAllergensOf is transitive]
+|   |   |-- retainsAllergensOf(ing_lysozyme, ing_egg_white)   [asserted fact]
+|   |   `-- retainsAllergensOf(ing_egg_white, ing_egg)   [asserted fact]
+|   `-- triggersAllergen(ing_egg, alg_egg)   [asserted fact]
+|-- not assertedTrigger(ing_lysozyme, alg_egg)   [negation as failure]  (not derivable)
+`-- not mentionsAllergen(ing_lysozyme, alg_egg)   [negation as failure]  (not derivable)
+
+==============================================================================
+A positive safety verdict needs negation as failure
+Goal: confirmedSafeFor(prod_tamari, cons_liam)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+confirmedSafeFor(prod_tamari, cons_liam)   [E13: Confirmed safe for consumer]
+|-- Consumer(cons_liam)   [asserted fact]
+|-- Product(prod_tamari)   [asserted fact]
+|-- hasIngredientListStatus(prod_tamari, complete)   [asserted fact]
+|-- hasSomeIngredient(prod_tamari)   [E11: Has some ingredient]
+|   `-- hasIngredient(prod_tamari, ing_soybean)   [asserted fact]
+|-- not unsafeFor(prod_tamari, cons_liam)   [negation as failure]  (no proof of unsafeFor(prod_tamari, cons_liam))
+|-- not cautionFor(prod_tamari, cons_liam)   [negation as failure]  (no proof of cautionFor(prod_tamari, cons_liam))
+`-- not uncertainFor(prod_tamari, cons_liam)   [negation as failure]  (no proof of uncertainFor(prod_tamari, cons_liam))
+
+Forward chaining (data-driven derivation):
+confirmedSafeFor(prod_tamari, cons_liam)   [E13: Confirmed safe for consumer]
+|-- Consumer(cons_liam)   [asserted fact]
+|-- Product(prod_tamari)   [asserted fact]
+|-- hasIngredientListStatus(prod_tamari, complete)   [asserted fact]
+|-- hasSomeIngredient(prod_tamari)   [E11: Has some ingredient]
+|   `-- hasIngredient(prod_tamari, ing_soybean)   [asserted fact]
+|-- not unsafeFor(prod_tamari, cons_liam)   [negation as failure]  (not derivable)
+|-- not cautionFor(prod_tamari, cons_liam)   [negation as failure]  (not derivable)
+`-- not uncertainFor(prod_tamari, cons_liam)   [negation as failure]  (not derivable)
+
+==============================================================================
+Numeric threshold at exactly 10 ppm
+Goal: declarationDuty(prod_dried_apricots, alg_sulphites, jur_canada)
+------------------------------------------------------------------------------
+Backward chaining (goal-driven):
+declarationDuty(prod_dried_apricots, alg_sulphites, jur_canada)   [E06: Canada sulphite duty]
+|-- Product(prod_dried_apricots)   [asserted fact]
+|-- soldIn(prod_dried_apricots, jur_canada)   [asserted fact]
+|-- CanadaJurisdiction(jur_canada)   [asserted fact]
+|-- hasSulphiteMgPerKg(prod_dried_apricots, 10.0)   [asserted fact]
+`-- greaterThanOrEqual(10.0, 10.0)   [built-in test]
+
+Forward chaining (data-driven derivation):
+declarationDuty(prod_dried_apricots, alg_sulphites, jur_canada)   [E06: Canada sulphite duty]
+|-- Product(prod_dried_apricots)   [asserted fact]
+|-- soldIn(prod_dried_apricots, jur_canada)   [asserted fact]
+|-- CanadaJurisdiction(jur_canada)   [asserted fact]
+|-- hasSulphiteMgPerKg(prod_dried_apricots, 10.0)   [asserted fact]
+`-- greaterThanOrEqual(10.0, 10.0)   [built-in test]
+
+==============================================================================
+WHY NOT  confirmedSafeFor(prod_dark_chocolate, cons_maya)
+------------------------------------------------------------------------------
+[E13] Confirmed safe for consumer: blocked because cautionFor(prod_dark_chocolate, cons_maya) holds:
+      cautionFor(prod_dark_chocolate, cons_maya)   [R08: Caution for consumer]
+      |-- Consumer(cons_maya)   [asserted fact]
+      |-- mustAvoid(cons_maya, alg_milk)   [asserted fact]
+      `-- mayContain(prod_dark_chocolate, alg_milk)   [asserted fact]
+
+==============================================================================
+WHY NOT  VerifiedVeganProduct(prod_plant_protein_bar)
+------------------------------------------------------------------------------
+[E21] Verified vegan product: blocked because hasNonVeganSafeIngredient(prod_plant_protein_bar) holds:
+      hasNonVeganSafeIngredient(prod_plant_protein_bar)   [E20: Product has a non-vegan-safe ingredient]
+      |-- hasIngredient(prod_plant_protein_bar, ing_mono_diglycerides)   [asserted fact]
+      `-- not VeganSafeIngredient(ing_mono_diglycerides)   [negation as failure]  (no proof of VeganSafeIngredient(ing_mono_diglycerides))
+
+==============================================================================
+WHY NOT  declarationDuty(prod_wheat_glucose_candy, alg_wheat, jur_eu)
+------------------------------------------------------------------------------
+[E04] Declaration duty unless exempt: blocked because exemptFromDeclaration(ing_wheat_glucose_syrup, alg_wheat, jur_eu) holds:
+      exemptFromDeclaration(ing_wheat_glucose_syrup, alg_wheat, jur_eu)   [asserted fact]
+
+==============================================================================
+WHY NOT  declarationDuty(prod_dried_apricots, alg_sulphites, jur_eu)
+------------------------------------------------------------------------------
+[E04] Declaration duty unless exempt: no evidence for requiresDeclarationOf(jur_eu, alg_sulphites)
+[E05] US sulphite duty: no evidence for USJurisdiction(jur_eu)
+[E06] Canada sulphite duty: no evidence for CanadaJurisdiction(jur_eu)
+[E07] EU sulphite duty: test failed: 10.0 > 10.0 is false

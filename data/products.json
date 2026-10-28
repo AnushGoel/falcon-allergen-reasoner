@@ -1,0 +1,1133 @@
+{
+ "_about": "45 representative packaged products (fictional, no real brands). 'declared' lists the allergens the label actually emphasises or names in a Contains statement; comparing it with what the rules infer is how undeclared allergens are found. 'status' says whether the ingredient list is complete, which decides where the local closed-world assumption may be applied.",
+ "products": [
+  {
+   "id": "prod_hazelnut_cocoa_spread",
+   "label": "Hazelnut Cocoa Spread",
+   "category": "cat_spreads",
+   "ingredients": [
+    "ing_sugar",
+    "ing_palm_oil",
+    "ing_hazelnut",
+    "ing_skimmed_milk_powder",
+    "ing_cocoa_powder",
+    "ing_soy_lecithin",
+    "ing_vanillin"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_hazelnut",
+    "alg_milk",
+    "alg_soy"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Baseline multi-allergen product, fully and correctly declared."
+  },
+  {
+   "id": "prod_oat_barista_drink",
+   "label": "Oat Barista Drink",
+   "category": "cat_plant_drinks",
+   "ingredients": [
+    "ing_water",
+    "ing_oats",
+    "ing_rapeseed_oil",
+    "ing_calcium_carbonate",
+    "ing_dipotassium_phosphate",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_vegan",
+    "claim_dairy_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_oats"
+   ],
+   "sold_in": [
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Vegan and dairy-free, but ordinary oats are a gluten source for coeliac consumers."
+  },
+  {
+   "id": "prod_caesar_dressing",
+   "label": "Classic Caesar Dressing",
+   "category": "cat_dressings",
+   "ingredients": [
+    "ing_rapeseed_oil",
+    "ing_water",
+    "ing_parmesan",
+    "ing_egg_yolk",
+    "ing_anchovy",
+    "ing_garlic",
+    "ing_lemon_juice",
+    "ing_salt",
+    "ing_black_pepper"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_milk",
+    "alg_egg",
+    "alg_fish"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Three allergens; not vegetarian because of anchovy and animal rennet."
+  },
+  {
+   "id": "prod_steakhouse_sauce",
+   "label": "Smoky Steakhouse Sauce",
+   "category": "cat_sauces",
+   "ingredients": [
+    "ing_tomato",
+    "ing_vinegar",
+    "ing_sugar",
+    "ing_worcestershire_sauce",
+    "ing_onion",
+    "ing_salt",
+    "ing_paprika"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "scenario": "Labelled vegan, but Worcestershire sauce hides anchovy two steps down: a false claim and an undeclared fish allergen."
+  },
+  {
+   "id": "prod_non_dairy_whitener",
+   "label": "Non-Dairy Coffee Whitener",
+   "category": "cat_creamers",
+   "ingredients": [
+    "ing_corn_syrup_solids",
+    "ing_coconut_oil",
+    "ing_sodium_caseinate",
+    "ing_dipotassium_phosphate",
+    "ing_mono_diglycerides",
+    "ing_natural_flavouring"
+   ],
+   "claims": [
+    "claim_non_dairy"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk"
+   ],
+   "sold_in": [
+    "jur_us"
+   ],
+   "status": "complete",
+   "scenario": "Legally 'non-dairy' in the US yet contains milk protein (caseinate)."
+  },
+  {
+   "id": "prod_lactose_free_milk",
+   "label": "Lactose-Free Milk",
+   "category": "cat_dairy",
+   "ingredients": [
+    "ing_lactose_free_milk"
+   ],
+   "claims": [
+    "claim_lactose_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lactose-free is not milk-free: still unsafe for a milk-allergic child."
+  },
+  {
+   "id": "prod_gf_sesame_crackers",
+   "label": "Gluten-Free Sesame Crackers",
+   "category": "cat_bakery",
+   "ingredients": [
+    "ing_rice_flour",
+    "ing_sesame_seed",
+    "ing_sunflower_oil",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_gluten_free",
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_sesame"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "gluten_ppm": 5.0,
+   "scenario": "Gluten-free claim backed by a lab result well under 20 ppm."
+  },
+  {
+   "id": "prod_gf_bread_codex",
+   "label": "Gluten-Free White Loaf",
+   "category": "cat_bakery",
+   "ingredients": [
+    "ing_water",
+    "ing_codex_wheat_starch",
+    "ing_rice_flour",
+    "ing_psyllium",
+    "ing_yeast",
+    "ing_sunflower_oil",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_gluten_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_wheat"
+   ],
+   "sold_in": [
+    "jur_eu"
+   ],
+   "status": "complete",
+   "gluten_ppm": 12.0,
+   "scenario": "Valid gluten-free claim that still contains wheat: safe for Sofia (coeliac), unsafe for Wei (wheat allergy)."
+  },
+  {
+   "id": "prod_rye_sourdough",
+   "label": "Rye Sourdough",
+   "category": "cat_bakery",
+   "ingredients": [
+    "ing_rye_flour",
+    "ing_wheat_flour",
+    "ing_water",
+    "ing_salt",
+    "ing_yeast"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_rye",
+    "alg_wheat"
+   ],
+   "sold_in": [
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Two gluten cereals; rye must be declared in Canada and the EU but not in the US."
+  },
+  {
+   "id": "prod_crispy_malt_flakes",
+   "label": "Crispy Malt Flakes",
+   "category": "cat_cereals",
+   "ingredients": [
+    "ing_rice",
+    "ing_sugar",
+    "ing_barley_malt_extract",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_gluten_free"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "gluten_ppm": 45.0,
+   "scenario": "Gluten-free claim contradicted twice: barley malt in the recipe and a 45 ppm lab result."
+  },
+  {
+   "id": "prod_peanut_butter_cups",
+   "label": "Peanut Butter Cups",
+   "category": "cat_confectionery",
+   "ingredients": [
+    "ing_milk_chocolate",
+    "ing_peanut",
+    "ing_sugar",
+    "ing_salt",
+    "ing_vanillin"
+   ],
+   "claims": [],
+   "may_contain": [
+    "alg_tree_nuts"
+   ],
+   "declared": [
+    "alg_milk",
+    "alg_peanut",
+    "alg_soy"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "scenario": "Milk and soy arrive through the compound ingredient 'milk chocolate'; precautionary tree nut warning."
+  },
+  {
+   "id": "prod_nut_free_granola_bar",
+   "label": "Nut-Free Granola Bar",
+   "category": "cat_snacks",
+   "ingredients": [
+    "ing_oat_flakes",
+    "ing_glucose_syrup",
+    "ing_sunflower_seed",
+    "ing_raisins",
+    "ing_sunflower_oil",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_nut_free",
+    "claim_vegan"
+   ],
+   "may_contain": [
+    "alg_hazelnut"
+   ],
+   "declared": [
+    "alg_oats"
+   ],
+   "sold_in": [
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Nut-free claim sitting next to a 'may contain hazelnut' warning."
+  },
+  {
+   "id": "prod_almond_cookies",
+   "label": "Almond Butter Cookies",
+   "category": "cat_bakery",
+   "ingredients": [
+    "ing_almond_flour",
+    "ing_sugar",
+    "ing_egg_white",
+    "ing_butter",
+    "ing_vanilla_extract"
+   ],
+   "claims": [
+    "claim_gluten_free"
+   ],
+   "may_contain": [
+    "alg_peanut"
+   ],
+   "declared": [
+    "alg_almond",
+    "alg_egg",
+    "alg_milk"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "gluten_ppm": 8.0,
+   "scenario": "Gluten-free and correctly declared; precautionary peanut warning."
+  },
+  {
+   "id": "prod_fruit_gummies",
+   "label": "Fruit Gummies",
+   "category": "cat_confectionery",
+   "ingredients": [
+    "ing_glucose_syrup",
+    "ing_sugar",
+    "ing_gelatin",
+    "ing_citric_acid",
+    "ing_carmine",
+    "ing_natural_flavouring"
+   ],
+   "claims": [
+    "claim_vegetarian"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Vegetarian claim contradicted by gelatin and carmine."
+  },
+  {
+   "id": "prod_vegan_gummies",
+   "label": "Vegan Berry Gummies",
+   "category": "cat_confectionery",
+   "ingredients": [
+    "ing_glucose_syrup",
+    "ing_sugar",
+    "ing_pectin",
+    "ing_citric_acid",
+    "ing_carmine"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Gelatin was replaced with pectin, but the red colour carmine is made from insects."
+  },
+  {
+   "id": "prod_honey_oat_bar",
+   "label": "Honey Oat Bar",
+   "category": "cat_snacks",
+   "ingredients": [
+    "ing_oat_flakes",
+    "ing_honey",
+    "ing_sunflower_oil",
+    "ing_almond"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_oats",
+    "alg_almond"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Honey makes the product vegetarian but not vegan."
+  },
+  {
+   "id": "prod_plant_protein_bar",
+   "label": "Plant Protein Bar",
+   "category": "cat_snacks",
+   "ingredients": [
+    "ing_pea_protein",
+    "ing_dates",
+    "ing_cocoa_powder",
+    "ing_mono_diglycerides",
+    "ing_natural_flavouring",
+    "ing_sunflower_lecithin"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "scenario": "Nothing contradicts the vegan claim, but E471 and 'natural flavouring' make it impossible to verify."
+  },
+  {
+   "id": "prod_sesame_hummus",
+   "label": "Classic Hummus",
+   "category": "cat_spreads",
+   "ingredients": [
+    "ing_chickpea",
+    "ing_tahini",
+    "ing_olive_oil",
+    "ing_lemon_juice",
+    "ing_garlic",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_vegan",
+    "claim_gluten_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_sesame"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Sesame arrives through tahini, a name that does not mention sesame."
+  },
+  {
+   "id": "prod_celery_salt",
+   "label": "Celery Salt",
+   "category": "cat_seasonings",
+   "ingredients": [
+    "ing_salt",
+    "ing_celery_seed"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Compliant in the US, but celery must be emphasised in the EU."
+  },
+  {
+   "id": "prod_dijon_mustard",
+   "label": "Dijon Mustard",
+   "category": "cat_condiments",
+   "ingredients": [
+    "ing_water",
+    "ing_mustard_seed",
+    "ing_vinegar",
+    "ing_salt",
+    "ing_potassium_metabisulphite"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_mustard",
+    "alg_sulphites"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "sulphite_mg_per_kg": 45.0,
+   "scenario": "Mustard is a regulated allergen in Canada and the EU only; sulphites well above every threshold."
+  },
+  {
+   "id": "prod_dried_apricots",
+   "label": "Dried Apricots",
+   "category": "cat_snacks",
+   "ingredients": [
+    "ing_dried_apricot",
+    "ing_sulphur_dioxide"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "sulphite_mg_per_kg": 10.0,
+   "scenario": "Boundary case: exactly 10 mg/kg. The US and Canada require declaration at 10 ppm or more; the EU only above 10 mg/kg."
+  },
+  {
+   "id": "prod_lupin_pasta",
+   "label": "High-Protein Lupin Pasta",
+   "category": "cat_pasta",
+   "ingredients": [
+    "ing_durum_semolina",
+    "ing_lupin_flour",
+    "ing_water"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_wheat"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lupin is regulated only in the EU, where it is undeclared."
+  },
+  {
+   "id": "prod_seafood_paella_kit",
+   "label": "Seafood Paella Kit",
+   "category": "cat_ready_meals",
+   "ingredients": [
+    "ing_rice",
+    "ing_shrimp",
+    "ing_mussel",
+    "ing_squid",
+    "ing_saffron",
+    "ing_olive_oil",
+    "ing_salt"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_crustacean",
+    "alg_mollusc"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Molluscs are a declared allergen in Canada and the EU, not under US law."
+  },
+  {
+   "id": "prod_imitation_crab",
+   "label": "Imitation Crab Sticks",
+   "category": "cat_seafood",
+   "ingredients": [
+    "ing_surimi",
+    "ing_wheat_starch",
+    "ing_egg_white",
+    "ing_sugar",
+    "ing_salt",
+    "ing_crab_extract"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_fish",
+    "alg_wheat",
+    "alg_egg",
+    "alg_crustacean"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "scenario": "'Crab' sticks are mostly fish (surimi), plus wheat and egg."
+  },
+  {
+   "id": "prod_dark_chocolate",
+   "label": "Dark Chocolate 70%",
+   "category": "cat_confectionery",
+   "ingredients": [
+    "ing_cocoa_mass",
+    "ing_sugar",
+    "ing_cocoa_butter",
+    "ing_soy_lecithin",
+    "ing_vanilla_extract"
+   ],
+   "claims": [
+    "claim_vegan",
+    "claim_dairy_free"
+   ],
+   "may_contain": [
+    "alg_milk",
+    "alg_hazelnut"
+   ],
+   "declared": [
+    "alg_soy"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Recipe is vegan, but a dairy-free claim next to 'may contain milk' is a precautionary conflict."
+  },
+  {
+   "id": "prod_coconut_drink",
+   "label": "Coconut Drink",
+   "category": "cat_plant_drinks",
+   "ingredients": [
+    "ing_water",
+    "ing_coconut_milk",
+    "ing_guar_gum",
+    "ing_calcium_carbonate"
+   ],
+   "claims": [
+    "claim_dairy_free",
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lexical trap: 'coconut milk' contains no milk."
+  },
+  {
+   "id": "prod_eggplant_parmigiana",
+   "label": "Eggplant Parmigiana",
+   "category": "cat_ready_meals",
+   "ingredients": [
+    "ing_eggplant",
+    "ing_tomato",
+    "ing_mozzarella",
+    "ing_parmesan",
+    "ing_breadcrumbs",
+    "ing_olive_oil",
+    "ing_basil",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_vegetarian"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk",
+    "alg_wheat"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lexical trap ('eggplant' has no egg) and a hidden non-vegetarian ingredient (animal rennet in parmesan)."
+  },
+  {
+   "id": "prod_baking_powder",
+   "label": "Baking Powder",
+   "category": "cat_cooking",
+   "ingredients": [
+    "ing_sodium_bicarbonate",
+    "ing_cream_of_tartar",
+    "ing_corn_starch"
+   ],
+   "claims": [
+    "claim_vegan",
+    "claim_gluten_free",
+    "claim_dairy_free"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lexical trap: 'cream of tartar' is a grape by-product."
+  },
+  {
+   "id": "prod_peanut_butter",
+   "label": "Smooth Peanut Butter",
+   "category": "cat_spreads",
+   "ingredients": [
+    "ing_peanut",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_peanut"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lexical trap: 'peanut butter' contains no butter."
+  },
+  {
+   "id": "prod_ghee",
+   "label": "Pure Ghee",
+   "category": "cat_dairy",
+   "ingredients": [
+    "ing_ghee"
+   ],
+   "claims": [
+    "claim_lactose_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Very low in lactose but still a milk product."
+  },
+  {
+   "id": "prod_butternut_soup",
+   "label": "Roasted Butternut Soup",
+   "category": "cat_ready_meals",
+   "ingredients": [
+    "ing_water",
+    "ing_butternut_squash",
+    "ing_onion",
+    "ing_celery",
+    "ing_cream",
+    "ing_salt",
+    "ing_black_pepper"
+   ],
+   "claims": [
+    "claim_gluten_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk"
+   ],
+   "sold_in": [
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lexical trap ('butternut' is neither butter nor nut) and undeclared celery in the EU."
+  },
+  {
+   "id": "prod_trail_mix",
+   "label": "Classic Trail Mix",
+   "category": "cat_snacks",
+   "ingredients": [
+    "ing_peanut",
+    "ing_almond",
+    "ing_cashew",
+    "ing_raisins",
+    "ing_sunflower_oil"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_peanut",
+    "alg_almond",
+    "alg_cashew"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Peanut plus two specific tree nuts, all declared."
+  },
+  {
+   "id": "prod_pesto_genovese",
+   "label": "Pesto Genovese",
+   "category": "cat_sauces",
+   "ingredients": [
+    "ing_basil",
+    "ing_sunflower_oil",
+    "ing_parmesan",
+    "ing_cashew",
+    "ing_pine_nut",
+    "ing_garlic",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_vegetarian"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk",
+    "alg_cashew"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Pine nut is a declarable tree nut in the US and Canada but not the EU; parmesan rennet breaks the vegetarian claim."
+  },
+  {
+   "id": "prod_green_curry_paste",
+   "label": "Green Curry Paste",
+   "category": "cat_sauces",
+   "ingredients": [
+    "ing_green_chili",
+    "ing_lemongrass",
+    "ing_garlic",
+    "ing_shrimp_paste",
+    "ing_salt",
+    "ing_galangal"
+   ],
+   "claims": [
+    "claim_vegetarian"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_crustacean"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Vegetarian claim contradicted by shrimp paste."
+  },
+  {
+   "id": "prod_vitamin_d_gummies",
+   "label": "Vitamin D Gummies",
+   "category": "cat_supplements",
+   "ingredients": [
+    "ing_glucose_syrup",
+    "ing_sugar",
+    "ing_gelatin",
+    "ing_vitamin_d3",
+    "ing_citric_acid"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us"
+   ],
+   "status": "complete",
+   "scenario": "Gelatin rules out vegetarians; vitamin D3 source is unstated."
+  },
+  {
+   "id": "prod_rice_puffs_incomplete",
+   "label": "Rice Puffs (record incomplete)",
+   "category": "cat_cereals",
+   "ingredients": [
+    "ing_rice",
+    "ing_sugar"
+   ],
+   "claims": [
+    "claim_nut_free"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us"
+   ],
+   "status": "incomplete",
+   "scenario": "Only part of the ingredient list was captured. Nothing contradicts the nut-free claim, but nothing confirms it either."
+  },
+  {
+   "id": "prod_mystery_snack",
+   "label": "Mystery Snack (no ingredient data)",
+   "category": "cat_snacks",
+   "ingredients": [],
+   "claims": [],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "incomplete",
+   "scenario": "Open-world stress test: a closed-world system would wrongly call this vegan and allergen-free."
+  },
+  {
+   "id": "prod_soy_sauce",
+   "label": "Brewed Soy Sauce",
+   "category": "cat_sauces",
+   "ingredients": [
+    "ing_water",
+    "ing_soybean",
+    "ing_wheat",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_gluten_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_soy",
+    "alg_wheat"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Gluten-free claim contradicted: traditional soy sauce is brewed with wheat."
+  },
+  {
+   "id": "prod_tamari",
+   "label": "Tamari",
+   "category": "cat_sauces",
+   "ingredients": [
+    "ing_water",
+    "ing_soybean",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_gluten_free",
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_soy"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "gluten_ppm": 3.0,
+   "scenario": "The wheat-free alternative to soy sauce; claim verified."
+  },
+  {
+   "id": "prod_cooking_spray",
+   "label": "Cooking Spray",
+   "category": "cat_cooking",
+   "ingredients": [
+    "ing_refined_soybean_oil",
+    "ing_soy_lecithin"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_soy"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Soy is present, but via the lecithin, not the exempt refined oil. Proof traces show which."
+  },
+  {
+   "id": "prod_wheat_glucose_candy",
+   "label": "Fruit Drops",
+   "category": "cat_confectionery",
+   "ingredients": [
+    "ing_wheat_glucose_syrup",
+    "ing_sugar",
+    "ing_citric_acid"
+   ],
+   "claims": [
+    "claim_vegan"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Defeasible exemption: wheat glucose syrup need not be declared in the EU."
+  },
+  {
+   "id": "prod_aged_cheese_lysozyme",
+   "label": "Aged Hard Cheese",
+   "category": "cat_dairy",
+   "ingredients": [
+    "ing_milk",
+    "ing_salt",
+    "ing_microbial_rennet",
+    "ing_lysozyme"
+   ],
+   "claims": [
+    "claim_vegetarian"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_milk"
+   ],
+   "sold_in": [
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Lysozyme preservative is egg-derived: a hidden, undeclared egg allergen."
+  },
+  {
+   "id": "prod_classic_mayonnaise",
+   "label": "Classic Mayonnaise",
+   "category": "cat_condiments",
+   "ingredients": [
+    "ing_rapeseed_oil",
+    "ing_water",
+    "ing_egg_yolk",
+    "ing_vinegar",
+    "ing_mustard_seed",
+    "ing_sugar",
+    "ing_salt",
+    "ing_lemon_juice"
+   ],
+   "claims": [
+    "claim_gluten_free",
+    "claim_dairy_free"
+   ],
+   "may_contain": [],
+   "declared": [
+    "alg_egg"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada",
+    "jur_eu"
+   ],
+   "status": "complete",
+   "scenario": "Mustard declared nowhere: fine in the US, non-compliant in Canada and the EU."
+  },
+  {
+   "id": "prod_coleslaw_egg_free",
+   "label": "Creamy Coleslaw",
+   "category": "cat_ready_meals",
+   "ingredients": [
+    "ing_cabbage",
+    "ing_carrot",
+    "ing_mayonnaise",
+    "ing_vinegar",
+    "ing_sugar",
+    "ing_salt"
+   ],
+   "claims": [
+    "claim_egg_free"
+   ],
+   "may_contain": [],
+   "declared": [],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "scenario": "Egg-free claim contradicted by the egg yolk inside the mayonnaise."
+  },
+  {
+   "id": "prod_wafer_biscuits",
+   "label": "Cocoa Wafer Biscuits",
+   "category": "cat_bakery",
+   "ingredients": [
+    "ing_wheat_flour",
+    "ing_sugar",
+    "ing_palm_oil",
+    "ing_cocoa_powder",
+    "ing_lecithin",
+    "ing_salt"
+   ],
+   "claims": [],
+   "may_contain": [],
+   "declared": [
+    "alg_wheat"
+   ],
+   "sold_in": [
+    "jur_us",
+    "jur_canada"
+   ],
+   "status": "complete",
+   "scenario": "Plain 'lecithin' could be soy or egg: the label cannot say, so supplier verification is needed."
+  }
+ ]
+}

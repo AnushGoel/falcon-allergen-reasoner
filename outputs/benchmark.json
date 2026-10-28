@@ -1,0 +1,107 @@
+{
+  "engine": [
+    {
+      "factor": 1,
+      "products": 45,
+      "base_facts": 1174,
+      "derived_facts": 2893,
+      "seconds_min": 0.1554,
+      "seconds_median": 0.2071,
+      "backward_ms_per_query": 3.736
+    },
+    {
+      "factor": 2,
+      "products": 90,
+      "base_facts": 1782,
+      "derived_facts": 4849,
+      "seconds_min": 0.2697,
+      "seconds_median": 0.2706,
+      "backward_ms_per_query": 2.226
+    },
+    {
+      "factor": 4,
+      "products": 180,
+      "base_facts": 2999,
+      "derived_facts": 8625,
+      "seconds_min": 0.5054,
+      "seconds_median": 0.5554,
+      "backward_ms_per_query": 2.17
+    },
+    {
+      "factor": 8,
+      "products": 360,
+      "base_facts": 5430,
+      "derived_facts": 16129,
+      "seconds_min": 1.1048,
+      "seconds_median": 1.1237,
+      "backward_ms_per_query": 3.001
+    },
+    {
+      "factor": 16,
+      "products": 720,
+      "base_facts": 10286,
+      "derived_facts": 30994,
+      "seconds_min": 2.106,
+      "seconds_median": 2.2205,
+      "backward_ms_per_query": 2.95
+    },
+    {
+      "factor": 32,
+      "products": 1440,
+      "base_facts": 20014,
+      "derived_facts": 61638,
+      "seconds_min": 4.4906,
+      "seconds_median": 4.5403,
+      "backward_ms_per_query": 2.528
+    },
+    {
+      "factor": 64,
+      "products": 2880,
+      "base_facts": 39463,
+      "derived_facts": 121293,
+      "seconds_min": 8.1715,
+      "seconds_median": 8.3693,
+      "backward_ms_per_query": 2.726
+    }
+  ],
+  "engine_slope": 0.976,
+  "owl": [
+    {
+      "factor": 1,
+      "products": 45,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.059,
+      "reasoning_seconds": 6.112,
+      "message": ""
+    },
+    {
+      "factor": 2,
+      "products": 90,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.064,
+      "reasoning_seconds": 20.096,
+      "message": ""
+    },
+    {
+      "factor": 4,
+      "products": 180,
+      "reasoner": "hermit",
+      "status": "consistent",
+      "build_seconds": 0.085,
+      "reasoning_seconds": 90.58,
+      "message": ""
+    },
+    {
+      "factor": 1,
+      "products": 45,
+      "reasoner": "pellet",
+      "build_seconds": null,
+      "reasoning_seconds": null,
+      "status": "timeout",
+      "message": "no result within 150 s"
+    }
+  ],
+  "hermit_slope": 1.945
+}

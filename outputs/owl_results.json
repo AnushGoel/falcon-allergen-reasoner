@@ -1,0 +1,1107 @@
+{
+  "status": "ok",
+  "java": {
+    "java": "/opt/java25/bin/java",
+    "source": "FALCON_JAVA",
+    "version": "openjdk version \"25.0.5\" 2026-10-20 LTS",
+    "major": 25,
+    "found": [
+      [
+        25,
+        "/opt/java25/bin/java"
+      ],
+      [
+        21,
+        "/usr/bin/java"
+      ]
+    ]
+  },
+  "owlready2_version": "0.51",
+  "build_seconds": 0.056,
+  "build_report": {
+    "classes": 62,
+    "defined_classes": 30,
+    "object_properties": 29,
+    "data_properties": 4,
+    "annotation_properties": 4,
+    "individuals": 262,
+    "property_chains": 4,
+    "general_class_axioms": 3,
+    "restrictions": 8,
+    "disjointness_axioms": 6,
+    "swrl_rules": 17,
+    "swrl_fallbacks": [],
+    "warnings": []
+  },
+  "triples_asserted": 3233,
+  "pellet": {
+    "reasoner": "pellet",
+    "status": "consistent",
+    "seconds": 2074.961,
+    "message": "",
+    "unsatisfiable_classes": []
+  },
+  "hermit": {
+    "reasoner": "hermit",
+    "status": "consistent",
+    "seconds": 5.798,
+    "message": "",
+    "unsatisfiable_classes": []
+  },
+  "materializer": "pellet",
+  "facts_inferred": 888,
+  "triples_after_reasoning": 3938,
+  "sparql_rows_before_after": [
+    {
+      "cq": "CQ01",
+      "rows before reasoning": 0,
+      "rows after reasoning": 14
+    },
+    {
+      "cq": "CQ02",
+      "rows before reasoning": 0,
+      "rows after reasoning": 1
+    },
+    {
+      "cq": "CQ03",
+      "rows before reasoning": 0,
+      "rows after reasoning": 10
+    },
+    {
+      "cq": "CQ04",
+      "rows before reasoning": 0,
+      "rows after reasoning": 2
+    },
+    {
+      "cq": "CQ05",
+      "rows before reasoning": 0,
+      "rows after reasoning": 9
+    },
+    {
+      "cq": "CQ06",
+      "rows before reasoning": 43,
+      "rows after reasoning": 34
+    },
+    {
+      "cq": "CQ07",
+      "rows before reasoning": 0,
+      "rows after reasoning": 170
+    },
+    {
+      "cq": "CQ08",
+      "rows before reasoning": 0,
+      "rows after reasoning": 139
+    },
+    {
+      "cq": "CQ09",
+      "rows before reasoning": 0,
+      "rows after reasoning": 0
+    },
+    {
+      "cq": "CQ10",
+      "rows before reasoning": 0,
+      "rows after reasoning": 2
+    },
+    {
+      "cq": "CQ11",
+      "rows before reasoning": 14250,
+      "rows after reasoning": 14260
+    },
+    {
+      "cq": "CQ13",
+      "rows before reasoning": 0,
+      "rows after reasoning": 16
+    },
+    {
+      "cq": "CQ14",
+      "rows before reasoning": 45,
+      "rows after reasoning": 35
+    }
+  ],
+  "sparql_answers": {
+    "CQ01": {
+      "status": "ok",
+      "rows": 14,
+      "sample": [
+        [
+          "Cream"
+        ],
+        [
+          "Butter"
+        ],
+        [
+          "Ghee (clarified butter)"
+        ],
+        [
+          "Whey"
+        ],
+        [
+          "Whey powder"
+        ],
+        [
+          "Casein"
+        ],
+        [
+          "Sodium caseinate"
+        ],
+        [
+          "Lactose"
+        ],
+        [
+          "Skimmed milk powder"
+        ],
+        [
+          "Whole milk powder"
+        ],
+        [
+          "Buttermilk"
+        ],
+        [
+          "Mozzarella cheese"
+        ]
+      ]
+    },
+    "CQ02": {
+      "status": "ok",
+      "rows": 1,
+      "sample": [
+        [
+          "Fish"
+        ]
+      ]
+    },
+    "CQ03": {
+      "status": "ok",
+      "rows": 10,
+      "sample": [
+        [
+          "Smoky Steakhouse Sauce",
+          "Vegan"
+        ],
+        [
+          "Crispy Malt Flakes",
+          "Gluten-free"
+        ],
+        [
+          "Fruit Gummies",
+          "Vegetarian"
+        ],
+        [
+          "Vegan Berry Gummies",
+          "Vegan"
+        ],
+        [
+          "Honey Oat Bar",
+          "Vegan"
+        ],
+        [
+          "Eggplant Parmigiana",
+          "Vegetarian"
+        ],
+        [
+          "Pesto Genovese",
+          "Vegetarian"
+        ],
+        [
+          "Green Curry Paste",
+          "Vegetarian"
+        ],
+        [
+          "Brewed Soy Sauce",
+          "Gluten-free"
+        ],
+        [
+          "Creamy Coleslaw",
+          "Egg-free"
+        ]
+      ]
+    },
+    "CQ04": {
+      "status": "ok",
+      "rows": 2,
+      "sample": [
+        [
+          "Nut-Free Granola Bar",
+          "Nut-free",
+          "Tree nuts"
+        ],
+        [
+          "Dark Chocolate 70%",
+          "Dairy-free",
+          "Milk"
+        ]
+      ]
+    },
+    "CQ05": {
+      "status": "ok",
+      "rows": 9,
+      "sample": [
+        [
+          "Hazelnut Cocoa Spread",
+          "UNSAFE"
+        ],
+        [
+          "Peanut Butter Cups",
+          "UNSAFE"
+        ],
+        [
+          "Nut-Free Granola Bar",
+          "CAUTION"
+        ],
+        [
+          "Almond Butter Cookies",
+          "UNSAFE"
+        ],
+        [
+          "Honey Oat Bar",
+          "UNSAFE"
+        ],
+        [
+          "Dark Chocolate 70%",
+          "CAUTION"
+        ],
+        [
+          "Smooth Peanut Butter",
+          "UNSAFE"
+        ],
+        [
+          "Classic Trail Mix",
+          "UNSAFE"
+        ],
+        [
+          "Pesto Genovese",
+          "UNSAFE"
+        ]
+      ]
+    },
+    "CQ06": {
+      "status": "ok",
+      "rows": 34,
+      "sample": [
+        [
+          "Oat Barista Drink"
+        ],
+        [
+          "Classic Caesar Dressing"
+        ],
+        [
+          "Smoky Steakhouse Sauce"
+        ],
+        [
+          "Non-Dairy Coffee Whitener"
+        ],
+        [
+          "Lactose-Free Milk"
+        ],
+        [
+          "Gluten-Free Sesame Crackers"
+        ],
+        [
+          "Gluten-Free White Loaf"
+        ],
+        [
+          "Rye Sourdough"
+        ],
+        [
+          "Crispy Malt Flakes"
+        ],
+        [
+          "Fruit Gummies"
+        ],
+        [
+          "Vegan Berry Gummies"
+        ],
+        [
+          "Plant Protein Bar"
+        ]
+      ]
+    },
+    "CQ07": {
+      "status": "ok",
+      "rows": 170,
+      "sample": [
+        [
+          "Hazelnut Cocoa Spread",
+          "ContainsMilkProduct"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "ContainsSoyProduct"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "ContainsTreeNutsProduct"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "MultiMarketProduct"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "NonVeganProduct"
+        ],
+        [
+          "Oat Barista Drink",
+          "ContainsGlutenCerealsProduct"
+        ],
+        [
+          "Oat Barista Drink",
+          "GlutenContainingProduct"
+        ],
+        [
+          "Oat Barista Drink",
+          "MultiMarketProduct"
+        ],
+        [
+          "Classic Caesar Dressing",
+          "ContainsEggProduct"
+        ],
+        [
+          "Classic Caesar Dressing",
+          "ContainsFishProduct"
+        ],
+        [
+          "Classic Caesar Dressing",
+          "ContainsMilkProduct"
+        ],
+        [
+          "Classic Caesar Dressing",
+          "MultiMarketProduct"
+        ]
+      ]
+    },
+    "CQ08": {
+      "status": "ok",
+      "rows": 139,
+      "sample": [
+        [
+          "Hazelnut Cocoa Spread",
+          "Milk",
+          "Canada"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Milk",
+          "EU"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Milk",
+          "US"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Hazelnut",
+          "Canada"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Hazelnut",
+          "EU"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Hazelnut",
+          "US"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Soybean",
+          "Canada"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Soybean",
+          "EU"
+        ],
+        [
+          "Hazelnut Cocoa Spread",
+          "Soybean",
+          "US"
+        ],
+        [
+          "Oat Barista Drink",
+          "Oats",
+          "Canada"
+        ],
+        [
+          "Oat Barista Drink",
+          "Oats",
+          "EU"
+        ],
+        [
+          "Classic Caesar Dressing",
+          "Milk",
+          "EU"
+        ]
+      ]
+    },
+    "CQ09": {
+      "status": "ok",
+      "rows": 0,
+      "sample": []
+    },
+    "CQ10": {
+      "status": "ok",
+      "rows": 2,
+      "sample": [
+        [
+          "Rice Puffs (record incomplete)"
+        ],
+        [
+          "Mystery Snack (no ingredient data)"
+        ]
+      ]
+    },
+    "CQ11": {
+      "status": "ok",
+      "rows": 14260,
+      "sample": [
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "",
+          "MEETS"
+        ]
+      ]
+    },
+    "CQ13": {
+      "status": "ok",
+      "rows": 16,
+      "sample": [
+        [
+          "Smoky Steakhouse Sauce",
+          "Fish",
+          "Canada"
+        ],
+        [
+          "Smoky Steakhouse Sauce",
+          "Fish",
+          "US"
+        ],
+        [
+          "Crispy Malt Flakes",
+          "Barley",
+          "Canada"
+        ],
+        [
+          "Celery Salt",
+          "Celery",
+          "EU"
+        ],
+        [
+          "High-Protein Lupin Pasta",
+          "Lupin",
+          "EU"
+        ],
+        [
+          "Roasted Butternut Soup",
+          "Celery",
+          "EU"
+        ],
+        [
+          "Pesto Genovese",
+          "Pine nut",
+          "Canada"
+        ],
+        [
+          "Pesto Genovese",
+          "Pine nut",
+          "US"
+        ],
+        [
+          "Fruit Drops",
+          "Wheat",
+          "EU"
+        ],
+        [
+          "Aged Hard Cheese",
+          "Egg",
+          "Canada"
+        ],
+        [
+          "Aged Hard Cheese",
+          "Egg",
+          "EU"
+        ],
+        [
+          "Classic Mayonnaise",
+          "Mustard",
+          "Canada"
+        ]
+      ]
+    },
+    "CQ14": {
+      "status": "ok",
+      "rows": 35,
+      "sample": [
+        [
+          "Oat Barista Drink",
+          "Vegan"
+        ],
+        [
+          "Oat Barista Drink",
+          "Dairy-free"
+        ],
+        [
+          "Non-Dairy Coffee Whitener",
+          "Non-dairy (US term)"
+        ],
+        [
+          "Lactose-Free Milk",
+          "Lactose-free"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "Vegan"
+        ],
+        [
+          "Gluten-Free Sesame Crackers",
+          "Gluten-free"
+        ],
+        [
+          "Gluten-Free White Loaf",
+          "Gluten-free"
+        ],
+        [
+          "Nut-Free Granola Bar",
+          "Vegan"
+        ],
+        [
+          "Nut-Free Granola Bar",
+          "Nut-free"
+        ],
+        [
+          "Almond Butter Cookies",
+          "Gluten-free"
+        ],
+        [
+          "Plant Protein Bar",
+          "Vegan"
+        ],
+        [
+          "Classic Hummus",
+          "Vegan"
+        ]
+      ]
+    }
+  },
+  "crossval": [
+    {
+      "predicate": "containsAllergen",
+      "engine": 90,
+      "owl": 90,
+      "agree": 90,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "mayContain",
+      "engine": 7,
+      "owl": 7,
+      "agree": 7,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "triggersAllergen",
+      "engine": 82,
+      "owl": 82,
+      "agree": 82,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "contradictsClaim",
+      "engine": 10,
+      "owl": 10,
+      "agree": 10,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "precautionaryConflictWith",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "unsafeFor",
+      "engine": 55,
+      "owl": 55,
+      "agree": 55,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "cautionFor",
+      "engine": 5,
+      "owl": 5,
+      "agree": 5,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "unsuitableForDietOf",
+      "engine": 31,
+      "owl": 31,
+      "agree": 31,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "mustDeclare",
+      "engine": 61,
+      "owl": 61,
+      "agree": 61,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "mustDeclareInUS",
+      "engine": 43,
+      "owl": 43,
+      "agree": 43,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "mustDeclareInCanada",
+      "engine": 49,
+      "owl": 49,
+      "agree": 49,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "mustDeclareInEU",
+      "engine": 47,
+      "owl": 47,
+      "agree": 47,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "derivedFrom",
+      "engine": 56,
+      "owl": 56,
+      "agree": 56,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "NonVeganProduct",
+      "engine": 21,
+      "owl": 21,
+      "agree": 21,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "NonVegetarianProduct",
+      "engine": 10,
+      "owl": 10,
+      "agree": 10,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "OriginUncertainProduct",
+      "engine": 5,
+      "owl": 5,
+      "agree": 5,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "GlutenContainingProduct",
+      "engine": 10,
+      "owl": 10,
+      "agree": 10,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "AllergenContainingProduct",
+      "engine": 37,
+      "owl": 37,
+      "agree": 37,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "PrecautionaryLabelledProduct",
+      "engine": 4,
+      "owl": 4,
+      "agree": 4,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ClaimConflictProduct",
+      "engine": 10,
+      "owl": 10,
+      "agree": 10,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "PrecautionaryConflictProduct",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "MultiMarketProduct",
+      "engine": 40,
+      "owl": 40,
+      "agree": 40,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "IncompleteRecordProduct",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "MeetsGlutenFreeThreshold",
+      "engine": 4,
+      "owl": 4,
+      "agree": 4,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "SulphiteAtOrAbove10ppm",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "SulphiteAbove10ppm",
+      "engine": 1,
+      "owl": 1,
+      "agree": 1,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsMilkProduct",
+      "engine": 11,
+      "owl": 11,
+      "agree": 11,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsEggProduct",
+      "engine": 6,
+      "owl": 6,
+      "agree": 6,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsFishProduct",
+      "engine": 3,
+      "owl": 3,
+      "agree": 3,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsCrustaceanProduct",
+      "engine": 3,
+      "owl": 3,
+      "agree": 3,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsMolluscProduct",
+      "engine": 1,
+      "owl": 1,
+      "agree": 1,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsTreeNutsProduct",
+      "engine": 5,
+      "owl": 5,
+      "agree": 5,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsPeanutProduct",
+      "engine": 3,
+      "owl": 3,
+      "agree": 3,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsSoyProduct",
+      "engine": 6,
+      "owl": 6,
+      "agree": 6,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsSesameProduct",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsMustardProduct",
+      "engine": 3,
+      "owl": 3,
+      "agree": 3,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsCeleryProduct",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsLupinProduct",
+      "engine": 1,
+      "owl": 1,
+      "agree": 1,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsSulphitesProduct",
+      "engine": 2,
+      "owl": 2,
+      "agree": 2,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsGlutenCerealsProduct",
+      "engine": 12,
+      "owl": 12,
+      "agree": 12,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsWheatProduct",
+      "engine": 8,
+      "owl": 8,
+      "agree": 8,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "ContainsGlutenProduct",
+      "engine": 10,
+      "owl": 10,
+      "agree": 10,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "AnimalDerivedIngredient",
+      "engine": 39,
+      "owl": 39,
+      "agree": 39,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "NonVeganIngredient",
+      "engine": 42,
+      "owl": 42,
+      "agree": 42,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "NonVegetarianIngredient",
+      "engine": 20,
+      "owl": 20,
+      "agree": 20,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "GlutenSourceIngredient",
+      "engine": 14,
+      "owl": 14,
+      "agree": 14,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    },
+    {
+      "predicate": "LactoseSourceIngredient",
+      "engine": 9,
+      "owl": 9,
+      "agree": 9,
+      "jaccard": 1.0,
+      "only_engine": [],
+      "only_owl": []
+    }
+  ],
+  "cq12_owl": {
+    "reasoner": {
+      "reasoner": "pellet",
+      "status": "consistent",
+      "seconds": 2188.897,
+      "message": "",
+      "unsatisfiable_classes": []
+    },
+    "reasoner_used": "pellet",
+    "inferred_classes": [
+      "AllergenContainingProduct",
+      "ClaimConflictProduct",
+      "ContainsGlutenCerealsProduct",
+      "ContainsGlutenProduct",
+      "ContainsSesameProduct",
+      "ContainsWheatProduct",
+      "FoodEntity",
+      "GlutenContainingProduct",
+      "MultiMarketProduct",
+      "NonVeganProduct"
+    ],
+    "containsAllergen": [
+      "alg_gluten",
+      "alg_gluten_cereals",
+      "alg_sesame",
+      "alg_wheat"
+    ],
+    "contradictsClaim": [
+      "claim_vegan"
+    ],
+    "mustDeclareInEU": [
+      "alg_sesame",
+      "alg_wheat"
+    ],
+    "mustDeclareInCanada": [
+      "alg_sesame",
+      "alg_wheat"
+    ]
+  }
+}
