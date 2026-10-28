@@ -6,7 +6,7 @@ Paste an ingredient list. FALCON follows every ingredient back to its source, ch
 
 The sauce above is labelled vegan. Nothing on its label says fish, yet the reasoner follows Worcestershire sauce to its anchovy component. It concludes that the claim is false, and that both the US and Canada would require fish to be declared.
 
-**[Live app](https://YOUR-APP.streamlit.app)** · **[Technical report (PDF)](docs/FALCON_Technical_Report.pdf)** · **[Executed notebook with all outputs](notebooks/FALCON_Notebook_executed.ipynb)**
+**[Live app](https://falcon-allergen-reasoner.streamlit.app/)** · **[Technical report (PDF)](docs/FALCON_Technical_Report.pdf)** · **[Executed notebook with all outputs](notebooks/FALCON_Notebook_executed.ipynb)**
 
 ## Why food labels are a reasoning problem
 
